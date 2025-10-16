@@ -68,7 +68,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="mt-4 flex justify-center">
-                <a href="#" className="inline-block px-4 py-2 rounded-md bg-primary text-background hover:opacity-90 transition">Confirmar asistencia</a>
+                <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 rounded-md bg-primary text-background hover:opacity-90 transition">Confirmar asistencia</a>
          </div>
             </div>
           </ContentSection>
@@ -307,7 +307,7 @@ const Index = () => {
                 </div>
             </div>
             <div className="mt-12 flex justify-center">
-              <a href="#" className="inline-block px-4 py-2 rounded-md bg-primary text-background hover:opacity-90 transition">Confirmar asistencia</a>
+              <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 rounded-md bg-primary text-background hover:opacity-90 transition">Confirmar asistencia</a>
             </div>
           </ContentSection>
 
