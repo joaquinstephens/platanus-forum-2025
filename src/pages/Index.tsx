@@ -42,103 +42,204 @@ const Index = () => {
       
       <main className="p-4 sm:p-8 lg:p-12 relative z-10 max-w-4xl mx-auto">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <ContentSection id="platanus">
-            <div className="mb-12">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-4 flex items-center gap-3">
-                <img src="/lovable-uploads/e9ec9899-0f84-4b12-9ac6-b81c4d9b51ca.png" alt="Platanus Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
-                Platanus Forum '25
+          {/* Landing Page Header */}
+          <ContentSection id="platanus" className="min-h-screen flex items-center justify-center">
+            <div className="text-center space-y-8">
+              {/* Logo */}
+              <div className="flex justify-center mb-8">
+                <img src="/lovable-uploads/e9ec9899-0f84-4b12-9ac6-b81c4d9b51ca.png" alt="Platanus Logo" className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24" />
+              </div>
+              
+              {/* Main Title */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6">
+                PLATANUS FORUM 25
               </h1>
+              
+              {/* Subtitle */}
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                Un día para juntar a nuestros <span className="text-primary font-semibold">fundadores</span>, <span className="text-primary font-semibold">inversionistas</span> y <span className="text-primary font-semibold">amigos</span> de Platanus.
+              </p>
+              
+              {/* Date and Location Info */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+                <div className="bg-white text-black px-4 py-2 rounded text-sm font-mono font-bold">
+                  Jueves 20 de noviembre
+                </div>
+                <div className="border border-white text-white px-4 py-2 rounded text-sm font-mono font-bold">
+                  SANTIAGO, CHILE
+                </div>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="mt-12">
+                <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 rounded-md bg-primary text-black font-bold text-lg hover:opacity-90 transition uppercase tracking-wide">
+                  Confirmar asistencia
+                </a>
+              </div>
             </div>
           </ContentSection>
 
-          {/* Intro / Invitación principal */}
-          <ContentSection id="intro" className="mb-8">
-            <div className="space-y-4">
-              <p className="text-inherit font-normal text-white">Un día para juntar a nuestros <span className="text-primary">fundadores</span>, <span className="text-primary">inversionistas</span> y <span className="text-primary">amigos</span> de Platanus.</p>
-              <div className="flex justify-end">
-                <img src="/assets/unsummit.svg" alt="Un summit" className="max-h-24 w-auto" />
-              </div>
-              <img src="/lovable-uploads/Portada.jpg" alt="Platanus Forum presentation with speakers on stage" className="w-full object-cover rounded-lg" />
-              <div className="flex justify-center">
-                <div className="bg-primary/20 rounded-lg px-8 py-6 border border-primary/40 inline-block">
-                  <p className="text-lg sm:text-xl font-semibold text-white text-center">Jueves 20 de noviembre</p>
-                  <p className="text-lg sm:text-xl font-semibold text-white text-center">08:30 a 19:00</p>
-                  <p className="text-lg sm:text-xl font-semibold text-white text-center">Santiago</p>
-                </div>
-              </div>
-              <div className="mt-4 flex justify-center">
-                <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer" className="inline-block px-4 py-2 rounded-md bg-primary text-background hover:opacity-90 transition">Confirmar asistencia</a>
-         </div>
-            </div>
-          </ContentSection>
 
           {/* Detalles */}
           <ContentSection id="detalles">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Dame más detalles de lo que es</h2>
-            <p className="font-normal text-inherit">A lo largo de la historia han existido núcleos espacio-temporales donde hay una concentración de genialidad. Piensen en Atenas siglo IV aC, Florencia siglo XV, Londres en el XVI o actualmente Silicon Valley.</p>
-            <p className="font-normal text-inherit">Esta concentración es multifactorial, pero en Platanus creemos que la reunión de personas talentosas explorando ideas y construyendo cosas nuevas juega un papel importante.</p>
+            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">El evento</h2>
+            <p className="font-normal text-inherit">A lo largo de la historia han existido espacios donde hay una concentración de genialidad. Piensen en Atenas siglo IV aC, Florencia siglo XV, Londres en el XVI o actualmente Silicon Valley.</p>
+            <p className="font-normal text-inherit">Esta concentración es multifactorial, pero en Platanus creemos que la reunión de personas talentosas explorando cosas nuevas juega un papel importante.</p>
             <p className="font-normal text-inherit">Este espíritu de creación es contagioso. Las ideas se comparten y mejoran, el talento atrae más talento y se va generando un círculo virtuoso.</p>
-            <p className="font-normal text-inherit">Platanus tiene en su red a +300 fundadores, 110 inversionistas y una extensa red de amigos.</p>
-            <p className="font-normal text-primary">Hay un exceso de genialidad que debe aprovecharse y para eso esta Platanus Forum. Para que la gente en nuestra comunidad se tope, converse, fluyan las ideas y salgan nuevas oportunidades.</p>
+            <p className="font-normal text-inherit">Platanus tiene en su red a +300 fundadores, 120 inversionistas y una extensa red de amigos.</p>
+            <p className="font-normal text-primary">Hay un exceso de genialidad que debe aprovecharse y para eso esta Platanus Forum. Que la gente en nuestra comunidad se tope, converse, fluyan las ideas y salgan nuevas oportunidades.</p>
           </ContentSection>
 
-          {/* Ya ok, ¿qué gano? */}
-          <ContentSection id="gano">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Ya ok, ¿qué gano?</h2>
-            <p className="font-normal text-inherit">Queremos que cada asistente logre tres cosas con esta concentración de personas interesantes:</p>
-            <ul className="list-disc ml-6 space-y-2 mt-4">
-              <li className="font-normal text-inherit">Salir con <span className="text-primary">ají en el c#|°</span> para construir/empujar/invertir/investigar sobre startups.</li>
-              <li className="font-normal text-inherit">Llevarse al menos una <span className="text-primary">idea, mensaje o aprendizaje</span> que pueda aplicar en su vida laboral o personal.</li>
-              <li className="font-normal text-inherit"><span className="text-primary">Nuevos contactos</span> que agreguen valor.</li>
-            </ul>
-          </ContentSection>
 
           {/* Formato */}
           <ContentSection id="formato">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Cuéntame sobre el formato porfa</h2>
-            <p className="font-normal text-inherit">Para lograr los objetivos debe haber un equilibrio entre:</p>
+            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">El formato</h2>
+            <p className="font-normal text-inherit">Para lograr este objetivo el evento debe tener un equilibrio entre:</p>
             <ul className="list-disc ml-6 space-y-2 mt-4">
-              <li className="font-normal text-inherit"><span className="text-primary">Speakers:</span> nos gusta traer a fundadores haciendo cosas distintas a lo que vemos en el día a día en Latam.</li>
-              <li className="font-normal text-inherit"><span className="text-primary">Momentos para conocer lo que hacen los demás:</span>
-                <ul className="list-disc ml-6 mt-2 space-y-2">
-                  <li className="font-normal text-inherit"><span className="text-primary">De forma estructurada:</span> mini presentaciones de desafíos que tienen las startups del portafolio o nuestros inversionistas además de un ejemplo en vivo de nuestro famoso "Coliseo".</li>
-                  <li className="font-normal text-inherit"><span className="text-primary">De forma desestructurada:</span> desayuno, almuerzo, "recreos". <img src="/assets/akanetworking.svg" alt="a.k.a networking" className="inline-block max-h-14 w-auto ml-2 align-middle" /></li>
-                </ul>
-              </li>
-              <li className="font-normal text-inherit"><span className="text-primary">Conversaciones de la vida:</span> las mejores conexiones salen cuando se hablan trivialidades con un mocktail o una cerveza.</li>
+              <li className="font-normal text-inherit"><span className="text-primary">Fireside chats:</span> nos gusta traer a fundadores haciendo cosas distintas a lo que vemos en el día a día en Latam. Para esta versión contamos con:</li>
             </ul>
-          </ContentSection>
-
-          {/* Comunidad */}
-          <ContentSection id="comunidad">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Soy de los que necesitan saber quiénes van para convencerme</h2>
-            <p className="font-normal text-inherit">Nuestra comunidad:</p>
-            <ul className="list-disc ml-6 space-y-2 mt-4">
-              <li className="font-normal text-inherit">Fundadores del portafolio</li>
-              <li className="font-normal text-inherit">Mentores</li>
-              <li className="font-normal text-inherit">Inversionistas (LPs)</li>
-              <li className="font-normal text-inherit">Amigos (fundadores, VC, gente interesada en startups)</li>
-            </ul>
-          </ContentSection>
-
-          {/* Caras (texto simple) */}
-          <ContentSection id="caras">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">No, pero en serio, necesito ver caras</h2>
-            <p className="font-normal text-inherit">Les mandaremos la agenda una vez confirmemos a los últimos speakers y presentadores.</p>
             
-            {/* Carrousel de mentores: Prontamente (movido aquí) */}
-            <div className="w-full overflow-hidden relative mt-6 mb-8">
-              <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
-              <div className="flex gap-4 sm:gap-6 lg:gap-8" style={{ animation: 'scroll-mentors 40s linear infinite', width: 'fit-content' }}>
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div key={i} className="flex-shrink-0 w-40 flex flex-col items-center p-2">
-                    <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-2 border border-primary/40 bg-muted/30 flex items-center justify-center">
-                      <span className="text-xs sm:text-sm text-primary">Prontamente</span>
+            {/* Speakers Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              {/* Ignacio Beliers */}
+              <div className="flex flex-col items-center text-center space-y-1">
+                <a href="https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/" target="_blank" rel="noopener noreferrer" className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40 hover:border-primary transition-colors">
+                  <img src="/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.png" alt="Ignacio Beliers" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                </a>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-primary">Ignacio Beliers</h3>
+                  <a href="https://epic-aerospace.com/" target="_blank" rel="noopener noreferrer" className="text-lg text-white font-medium hover:text-primary transition-colors">Epic Aerospace</a>
+                </div>
+                <p className="text-sm text-white">Epic Aerospace está construyendo una línea de Orbit Transfer Vehicles (OTVs), vehículos espaciales que permite transportar carga a cualquier órbita desde lanzamientos espaciales.</p>
+                  </div>
+
+              {/* Roger Rea */}
+              <div className="flex flex-col items-center text-center space-y-1">
+                <a href="https://www.linkedin.com/in/rogeliorea/" target="_blank" rel="noopener noreferrer" className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40 hover:border-primary transition-colors">
+                  <img src="/lovable-uploads/roger.jpeg" alt="Roger Rea" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                </a>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-primary">Roger Rea</h3>
+                  <a href="https://grupalia.com/" target="_blank" rel="noopener noreferrer" className="text-lg text-white font-medium hover:text-primary transition-colors">Grupalia</a>
+                </div>
+                <p className="text-sm text-white">Grupalia otorga créditos grupales a comunidades de micro empresarios en México.</p>
+                  </div>
+
+              {/* Roman Teslyuk */}
+              <div className="flex flex-col items-center text-center space-y-1">
+                <a href="https://www.linkedin.com/in/roman-teslyuk-a344881a/" target="_blank" rel="noopener noreferrer" className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40 hover:border-primary transition-colors">
+                  <img src="/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.png" alt="Roman Teslyuk" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                </a>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-primary">Roman Teslyuk</h3>
+                  <a href="https://earth-ai.com/" target="_blank" rel="noopener noreferrer" className="text-lg text-white font-medium hover:text-primary transition-colors">Earth AI</a>
+                </div>
+                <p className="text-sm text-white">Earth AI es una startup australiana de exploración y perforación minera con un fuerte componente de AI para encontrar los mejores yacimientos.</p>
+                  </div>
+
+              {/* Francesco Crivelli */}
+              <div className="flex flex-col items-center text-center space-y-1">
+                <a href="https://www.linkedin.com/in/francesco-crivelli/" target="_blank" rel="noopener noreferrer" className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40 hover:border-primary transition-colors">
+                  <img src="/lovable-uploads/Francesco.jpeg" alt="Francesco Crivelli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                </a>
+                <div className="space-y-1">
+                  <h3 className="text-lg font-bold text-primary">Francesco Crivelli</h3>
+                  <a href="https://intuition.dev/" target="_blank" rel="noopener noreferrer" className="text-lg text-white font-medium hover:text-primary transition-colors">Intuition Core</a>
+                </div>
+                <p className="text-sm text-white">Intuition está armando la primera infraestructura para que la robótica puede implementarse en situaciones realeas de forma confiable y rápida.</p>
                     </div>
                   </div>
-                ))}
+            
+            {/* Additional format details */}
+            <div className="mt-8 space-y-4">
+              <ul className="list-disc ml-6 space-y-4">
+                <li className="font-normal text-inherit">
+                  <span className="text-primary">Momentos para conocer lo que hacen los demás de forma estructurada:</span>
+                  <ul className="list-disc ml-6 mt-2 space-y-2">
+                    <li className="font-normal text-inherit">Ejemplo en vivo de nuestro "Coliseo": 2 de nuestras startups hacen preguntas sobre sus negocios a 2 de nuestros mentores.</li>
+                    
+                    {/* Coliseo speakers */}
+                    <div className="mt-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="flex flex-col items-center text-center space-y-1">
+                          <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40">
+                            <img src="/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.png" alt="Pedro Pineda" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                          </div>
+                          <h4 className="text-lg font-bold text-primary">Pedro Pineda</h4>
+                          <p className="text-lg text-white font-medium">Fintual</p>
+                        </div>
+                        
+                        <div className="flex flex-col items-center text-center space-y-1">
+                          <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-primary/40">
+                            <img src="/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.png" alt="Jaime Arrieta" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300" />
+                          </div>
+                          <h4 className="text-lg font-bold text-primary">Jaime Arrieta</h4>
+                          <p className="text-lg text-white font-medium">Buk</p>
+                        </div>
+                      </div>
+                      <p className="text-sm font-medium text-primary mt-3 text-center">Mentores del Coliseo</p>
+                    </div>
+                    <li className="font-normal text-inherit">Conoce lo que hacen cinco startups del portafolio: nos son pitches. Cada una presentará un reto tecnológico o algo único que están haciendo.</li>
+                  </ul>
+                </li>
+                <li className="font-normal text-inherit">
+                  <span className="text-primary">Momentos para conocer lo que hacen los demás de forma desestructurada:</span> desayuno, almuerzo, tiempos libres y un cierre en un bar.
+                </li>
+              </ul>
+            </div>
+          </ContentSection>
+
+          {/* Agenda */}
+          <ContentSection id="agenda">
+            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Agenda</h2>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Desayuno</span>
+                <span className="text-white font-medium">08:30 - 09:30</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Apertura de Platanus</span>
+                <span className="text-white font-medium">09:30 - 09:50</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Palabras de Maxxa</span>
+                <span className="text-white font-medium">09:50 - 10:00</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Fireside chat with Roman Teslyuk</span>
+                <span className="text-white font-medium">10:00 - 11:00</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Coliseo en vivo (Pedro y Jaime)</span>
+                <span className="text-white font-medium">11:00 - 12:00</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Fireside chat with Rogelio Rea</span>
+                <span className="text-white font-medium">12:00 - 13:00</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Almuerzo</span>
+                <span className="text-white font-medium">13:00 - 14:00</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Eleven Labs</span>
+                <span className="text-white font-medium">14:00 - 14:30</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Fireside chat with Francesco Crivelli</span>
+                <span className="text-white font-medium">14:30 - 15:30</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Conoce a startups de Platanus</span>
+                <span className="text-white font-medium">15:30 - 16:30</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Fireside chat with Ignacio Beliers</span>
+                <span className="text-white font-medium">16:30 - 17:30</span>
+              </div>
+              <div className="flex justify-between items-center py-2 border-b border-primary/20">
+                <span className="text-white">Cocktail de cierre</span>
+                <span className="text-white font-medium">18:30 - 22:00</span>
               </div>
             </div>
           </ContentSection>
@@ -150,14 +251,8 @@ const Index = () => {
             <ul className="space-y-2 mb-6 list-disc ml-6 mt-4">
               <li className="font-normal text-inherit">Fundadores: <span className="text-primary">52%</span></li>
               <li className="font-normal text-inherit">LPs: <span className="text-primary">20%</span></li>
-              <li className="font-normal text-inherit">VC fund: <span className="text-primary">28%</span></li>
+              <li className="font-normal text-inherit">VC funds: <span className="text-primary">28%</span></li>
                </ul>
-            <p className="font-normal text-inherit mb-2">En cuanto a los speakers, trajimos a los fundadores de:</p>
-            <ul className="space-y-2 mb-6 list-disc ml-6">
-              <li className="font-normal text-inherit"><a href="https://platan-dot-yamm-track.appspot.com/2knOWeIKG8tgZvQLga0F1xT31MTTvGW1mRBbuEXRalan4qc5GlAEItVS7ykkdaQLb3pwnReW47cGXocMrVggivsKF4mCpGhkkDSf0K8_---fp6bu_16qogE2KO4csBjWNMRl8PB3wxKmPl7dmnNCYcAtgOmCvJEx7WM-nWFdpmELnOpMu" className="text-primary underline">AstroForge</a>: minería de asteroides</li>
-              <li className="font-normal text-inherit"><a href="https://platan-dot-yamm-track.appspot.com/2f_z8Ivpnzt0o4B7Ivc2HijGTnLJha9bi2yf5FTzzQaEBqs5GlAGVnvbvICwUEoAF47AcsqI-5l3H-0kva_dsl_VJ4QaKsVhVfkvwZMUBgA9As3yKMpYO-u87dFJ6A85_B04ILBwAzWuv3rO2j6mQz1Vy71YefIksuX2wMmwHspo" className="text-primary underline">EarthAI</a>: AI para la exploración y perforación minera.</li>
-              <li className="font-normal text-inherit"><a href="https://platan-dot-yamm-track.appspot.com/2VR8TYLuAA7D4dJSzsrbC_DugvG99wrLX7y0zHYh1izQDqs5GlAFjB3jPIpfaL91juTy4Z2ysJJ-mL7UN3vAqps45gUGTmgPGDCWpq-xjfHJhg2BjR1L3cDXP3xAuJ9oD_6G9hJ9wjOxzzZIpnQfDzcTCDpnqWv47FH3ET4SgmRin_eR6H71K5A" className="text-primary underline">Maverick Biometals</a>: extracción y procesamiento de metales con biotecnología.</li>
-              </ul>
             {/* Carrusel vertical (se mantiene) */}
               <div className="relative h-60 sm:h-72 lg:h-80 overflow-hidden my-8 rounded-lg">
                 {/* Top fade effect */}
@@ -283,18 +378,6 @@ const Index = () => {
               </Dialog>
           </ContentSection>
 
-          {/* Chile Tech Week */}
-          <ContentSection id="tech-week">
-            <h2 className="text-xl sm:text-2xl font-semibold text-primary mb-6">Chile Tech Week</h2>
-            <p className="font-normal text-inherit">Platanus Forum se realiza la misma semana que la <a href="https://techweek.cl/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Chile Tech Week</a>, que va del lunes 17 al domingo 23 de noviembre.</p>
-            <p className="font-normal text-inherit mt-4">En esta semana se congregan VC y fundadores de todo Latam, destacando:</p>
-            <ul className="list-disc ml-6 space-y-2 mt-4">
-              <li className="font-normal text-inherit">Nuestra <a href="https://hack.platan.us/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Platanus Hack</a></li>
-              <li className="font-normal text-inherit"><a href="https://cumbreacvc.cl/" target="_blank" rel="noopener noreferrer" className="text-primary underline">Cumbre ACVC</a></li>
-              <li className="font-normal text-inherit"><a href="https://www.emprendetumente.org/programa-2024" target="_blank" rel="noopener noreferrer" className="text-primary underline">ETM Day</a></li>
-              <li className="font-normal text-inherit">Side events de VCs y startups.</li>
-            </ul>
-          </ContentSection>
 
           {/* Fecha y hora */}
           <ContentSection id="fecha">
