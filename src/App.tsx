@@ -13,7 +13,6 @@ const App = () => (
     <TooltipProvider>
       {/* <Toaster />
       <Sonner /> */}
-      <div className="z-10 md:hidden fixed inset-x-0 w-screen bottom-0 bg-gradient-to-t from-black to-transparent h-24" />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
