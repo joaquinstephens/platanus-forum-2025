@@ -63,9 +63,9 @@ const Index = () => {
       <Sponsors />
 
       <div className="w-full flex flex-col items-center justify-center pb-8 pt-32 mx-auto">
-        <h2 className="z-20 font-mono text-3xl md:text-4xl max-w-5xl text-balance leading-tight uppercase">
+        {/* <h2 className="z-20 font-mono text-3xl md:text-4xl max-w-5xl text-balance leading-tight uppercase">
           No te lo pierdas
-        </h2>
+        </h2> */}
 
         <div className="p-1 w-full max-w-64 space-y-4 items-center mt-6">
           <Button className="w-full relative gap-4 z-10 pr-3" asChild>
