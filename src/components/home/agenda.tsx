@@ -45,14 +45,14 @@ const AGENDA_ITEMS: AgendaItem[] = [
     logo: "/logos/earth-ai.png",
     logoHeight: "h-4",
     link: "https://www.linkedin.com/in/roman-teslyuk-a344881a/",
-    profileImage: "/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.png"
+    profileImage: "/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.webp"
   },
   {
     time: { start: '11:00', end: '12:00' },
     title: 'Coliseo en vivo',
     description: 'Dos de nuestros mentores conversan con dos de nuestras startups sobre los desafíos de sus negocios.',
     speakers: ["Jaime Arrieta", "Pedro Pineda"],
-    profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.png", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.png"],
+    profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.webp", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.webp"],
     taglines: ["CEO Buk", "CEO Fintual"],
     logos: ["/logos/buk.png", "/logos/fintual.png"],
     logoHeights: ["h-5", "h-5"],
@@ -100,7 +100,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     logo: "/mentors/epic-aerospace.png",
     logoHeight: "h-3",
     link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
-    profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.png"
+    profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.webp"
   },
   {
     time: { start: '18:30', end: '22:00' },
@@ -166,7 +166,7 @@ export default function Agenda() {
                           />
                         </div>
                         <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
-                          <h3 className="font-mono uppercase text-white text-sm">{item.speakers[0]}</h3>
+                          <span className="font-mono uppercase text-white text-sm">{item.speakers[0]}</span>
                           <p className="text-sm font-light text-muted-foreground/70">{item.tagline}</p>
                           <img src={item.logo} alt={item.speakers[0]} width={108} height={24} className={cn("hidden md:block w-fit object-left object-contain mt-4 ml-right", item.logoHeight || "h-4")} />
                         </div>
@@ -197,7 +197,7 @@ export default function Agenda() {
                               target="_blank"
                               className="bg-white/[7%] group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
                             >
-                              <div className="h-20 md:h-24 w-20 md:w-24 flex-shrink-0 overflow-hidden">
+                              <div className="w-full md:w-auto md:h-24 flex-shrink-0 overflow-hidden">
                                 <img
                                   src={item.profileImages?.[idx]}
                                   alt={speaker}
@@ -205,7 +205,7 @@ export default function Agenda() {
                                 />
                               </div>
                               <div className="text-left flex flex-col gap-0.5 items-start justify-start px-4 py-4 md:py-2 w-full h-full">
-                                <h3 className="font-mono uppercase text-white text-sm">{speaker}</h3>
+                                <span className="font-mono uppercase text-white text-sm">{speaker}</span>
                                 <p className="text-sm font-light text-muted-foreground/70">{item.taglines?.[idx]}</p>
                                 <img src={item.logos?.[idx]} alt={speaker} width={108} height={20} className={cn("w-fit object-left object-contain mt-3 ml-right", item.logoHeights?.[idx] || "h-5")} />
                               </div>

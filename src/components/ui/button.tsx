@@ -6,11 +6,11 @@ import { cn } from "@/lib/utils";
 import ScrambleHover from "../../fancy/text/scramble-hover";
 
 const buttonVariants = cva(
-  "font-mono uppercase inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-sm text-sm font-normal ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative",
+  "font-mono uppercase inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-none text-sm font-normal ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 relative",
   {
     variants: {
       variant: {
-        default: "bg-yellow-300/20 hover:bg-primary-foreground/10 text-primary-foreground border border-primary-foreground backdrop-blur-xl before:absolute before:inset-0 before:bg-black/20 before:rounded-sm before:-z-10",
+        default: "bg-primary-foreground/10 hover:bg-primary-foreground/15 text-primary-foreground border border-primary-foreground backdrop-blur-xl before:absolute before:inset-0 before:bg-black/20 before:rounded-sm before:-z-10",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
@@ -61,7 +61,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         return <ScrambleHover text={String(node)} useOriginalCharsOnly={false} characters="FORUM2025" />;
       }
       if (React.isValidElement(node)) {
-        return React.cloneElement(node, {}, React.Children.toArray(node.props.children).map(mapChildren));
+        return React.cloneElement(node, {}, React.Children.toArray(node.props.children).map((child, i) => {
+          const mapped = mapChildren(child);
+          return React.isValidElement(mapped) ? React.cloneElement(mapped, { key: i }) : mapped;
+        }));
       }
       if (Array.isArray(node)) {
         return node.map((child, i) => <React.Fragment key={i}>{mapChildren(child)}</React.Fragment>);
