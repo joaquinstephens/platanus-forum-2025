@@ -20,7 +20,7 @@ export default function Sponsors() {
 
         <Link
           to="https://www.buk.cl/"
-          className="w-full p-8 md:p-16 flex items-center justify-center"
+          className="w-full p-16 flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
           <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
