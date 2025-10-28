@@ -163,7 +163,7 @@ export default function Agenda() {
                         <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
                           <h3 className="font-mono uppercase text-white text-sm">{item.speakers[0]}</h3>
                           <p className="text-sm font-light text-muted-foreground/70">{item.tagline}</p>
-                          <img src={item.logo} alt={item.speakers[0]} width={108} height={24} className={cn("sr-only md:not-sr-only w-fit object-left object-contain mt-4 ml-right", item.logoHeight || "h-4")} />
+                          <img src={item.logo} alt={item.speakers[0]} width={108} height={24} className={cn("hidden md:block w-fit object-left object-contain mt-4 ml-right", item.logoHeight || "h-4")} />
                         </div>
                       </Link>
                     </td>
