@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/hero";
 import Intro from "@/components/home/intro";
 import Agenda from "@/components/home/agenda";
 import Sponsors from "@/components/home/sponsors";
-import TerminalNavbar from "@/components/layout/terminal-navbar";
 import RotatingBanana from "@/components/RotatingBanana";
 import PixelGridBottom from "@/components/home/pixel-grid-bottom";
 import { Link } from "react-router-dom";
