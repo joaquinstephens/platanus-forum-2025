@@ -112,13 +112,13 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
   return (
     <div
       ref={containerRef}
-      className="z-10 w-full flex justify-center relative"
+      className="-z-[2] w-full flex justify-center relative pointer-events-none"
       style={{
         height: containerHeight,
       }}
     >
       <svg
-        className="z-10 w-full h-full"
+        className="z-0 w-full h-full"
         viewBox={`0 0 ${containerWidth} ${containerHeight}`}
         preserveAspectRatio="none"
       >

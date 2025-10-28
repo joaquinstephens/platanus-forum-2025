@@ -26,7 +26,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="text-center min-h-screen">
+    <main className="relative text-center min-h-screen">
       <div className="fixed size-screen bg-background/1 backdrop-blur-sm inset-0 -z-10" style={{ opacity: bgOpacity }} />
       <div className="w-full overflow-hidden -z-20 fixed inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'fade-in-delayed 0.8s ease-in-out 0.6s forwards' }}>
         <RotatingBanana modelPath="/assets/models/banana3d.glb" />
@@ -64,32 +64,32 @@ const Index = () => {
       </div>
 
       {/* <TerminalNavbar /> */}
+      <div className="z-50 [&_a]:pointer md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
+        <img
+          src="/platanus.svg"
+          alt="Platanus logo"
+          width={164}
+          height={40}
+          className="px-4 absolute mx-auto bottom-16 left-1/2 -translate-x-1/2 bg-black h-9 z-20"
+        />
+
+        <Link to="https://www.linkedin.com/school/platanus/" target="_blank">
+          LinkedIn
+        </Link>
+
+        <Link to="https://github.com/platanus" target="_blank">
+          GitHub
+        </Link>
+
+        <Link to="https://www.instagram.com/platanusventures" target="_blank">
+          Instagram
+        </Link>
+      </div>
 
       <div className="relative -z-10 -mt-[576px]">
         <PixelGridBottom gapMultiplier={4} />
 
-        <div className="z-20 md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
-          <img
-            src="/platanus.svg"
-            alt="Platanus logo"
-            width={164}
-            height={40}
-            className="px-4 absolute mx-auto bottom-16 left-1/2 -translate-x-1/2 bg-black h-9 z-20"
-          />
-
-          <Link to="https://www.linkedin.com/school/platanus/" target="_blank">
-            LinkedIn
-          </Link>
-
-          <Link to="https://github.com/platanus" target="_blank">
-            GitHub
-          </Link>
-
-          <Link to="https://www.instagram.com/platanusventures" target="_blank">
-            Instagram
-          </Link>
-        </div>
-        <div className="absolute -z-10 bottom-0 w-screen left-1/2 -translate-x-1/2 bg-gradient-to-t from-black from-25% to-transparent h-[150svh]" />
+        <div className="absolute -z-50 bottom-0 w-screen left-1/2 -translate-x-1/2 bg-gradient-to-t from-black from-25% to-transparent h-[150svh]" />
       </div>
     </main>
   );

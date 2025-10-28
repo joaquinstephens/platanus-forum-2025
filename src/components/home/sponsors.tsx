@@ -9,7 +9,7 @@ export default function Sponsors() {
   } as CSSProperties;
 
   return (
-    <section className="my-12 md:my-24 max-w-screen-lg w-full px-8 mx-auto flex flex-col justify-start items-start gap-14">
+    <section className="z-20 my-12 md:my-24 max-w-screen-lg w-full px-8 mx-auto flex flex-col justify-start items-start gap-14">
       <span className="font-mono uppercase text-foreground">
         {'< Sponsors />'}
       </span>
