@@ -170,7 +170,7 @@ export const Hero = () => {
           Platanus Forum '25
         </h1>
 
-        <p className="font-mono w-full px-8 uppercase text-sm text-muted-foreground">
+        <p className="font-mono max-w-lg leading-5 md:leading-6 md:text-base w-full px-8 uppercase text-sm text-muted-foreground">
           Un día para nuestros fundadores, inversionistas y amigos
         </p>
 
