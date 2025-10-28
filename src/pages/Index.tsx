@@ -7,11 +7,13 @@ import RotatingBanana from "@/components/RotatingBanana";
 import PixelGridBottom from "@/components/home/pixel-grid-bottom";
 import { Link } from "react-router-dom";
 import { TerminalOutput } from "@/components/ui/terminal-output";
+import Gallery from "@/components/home/gallery";
 
 const Index = () => {
 
   return (
     <main className="text-center min-h-screen">
+      <div className="fixed size-screen bg-background/[1%] backdrop-blur-[2px] inset-0 -z-10" />
       <div className="w-full overflow-hidden -z-20 fixed inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'fade-in-delayed 0.8s ease-in-out 0.6s forwards' }}>
         <RotatingBanana modelPath="/assets/models/banana3d.glb" />
       </div>
@@ -21,6 +23,8 @@ const Index = () => {
       <Intro />
 
       <Agenda />
+
+      <Gallery />
 
       <Sponsors />
 

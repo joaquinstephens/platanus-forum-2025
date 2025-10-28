@@ -54,19 +54,14 @@ export function GallerySlider({ direction = "left", speed = 20 }: GallerySliderP
         .gallery-item {
           transition: transform 0.3s ease, filter 0.3s ease;
         }
-
-        .gallery-item:hover {
-          transform: scale(1.05);
-          filter: brightness(1.1);
-        }
       `}</style>
 
       <div className="gallery-container w-full overflow-hidden">
-        <div className="gallery-scroll flex gap-6 w-max">
+        <div className="gallery-scroll flex gap-2 w-max">
           {duplicatedImages.map((image, index) => (
             <div
               key={index}
-              className="gallery-item flex-shrink-0 w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-xl overflow-hidden shadow-2xl"
+              className="gallery-item grayscale hover:grayscale-0 flex-shrink-0 w-32 h-32 md:w-64 md:h-64 lg:w-80 lg:h-80 overflow-hidden shadow-2xl"
             >
               <img
                 src={image.src}
