@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
   useRef,
+  useState,
 } from "react"
 import { useAnimationFrame } from "motion/react"
 
@@ -35,6 +36,7 @@ const Floating = ({
 }: FloatingProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const isMobile = useIsMobile()
+  const [isHovering, setIsHovering] = useState(false)
   const elementsMap = useRef(
     new Map<
       string,
@@ -62,8 +64,20 @@ const Floating = ({
     elementsMap.current.delete(id)
   }, [])
 
+  const handleMouseEnter = useCallback(() => {
+    setIsHovering(true)
+  }, [])
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovering(false)
+    elementsMap.current.forEach((data) => {
+      data.currentPosition = { x: 0, y: 0 }
+      data.element.style.transform = `translate3d(0px, 0px, 0)`
+    })
+  }, [])
+
   useAnimationFrame(() => {
-    if (!containerRef.current || isMobile) return
+    if (!containerRef.current || isMobile || !isHovering) return
 
     elementsMap.current.forEach((data) => {
       const strength = (data.depth * sensitivity) / 20
@@ -89,6 +103,8 @@ const Floating = ({
       <div
         ref={containerRef}
         className={cn("absolute top-0 left-0 w-full h-full", className)}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...props}
       >
         {children}
