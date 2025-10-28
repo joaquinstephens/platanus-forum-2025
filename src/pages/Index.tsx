@@ -8,12 +8,26 @@ import PixelGridBottom from "@/components/home/pixel-grid-bottom";
 import { Link } from "react-router-dom";
 import { TerminalOutput } from "@/components/ui/terminal-output";
 import Gallery from "@/components/home/gallery";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [bgOpacity, setBgOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const threshold = window.innerHeight * 0.7;
+      const opacity = Math.min(0.01, Math.max(0, (scrolled - threshold) / threshold));
+      setBgOpacity(opacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="text-center min-h-screen">
-      <div className="fixed size-screen bg-background/[1%] backdrop-blur-[2px] inset-0 -z-10" />
+      <div className="fixed size-screen bg-background backdrop-blur-[2px] inset-0 -z-10" style={{ opacity: bgOpacity }} />
       <div className="w-full overflow-hidden -z-20 fixed inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'fade-in-delayed 0.8s ease-in-out 0.6s forwards' }}>
         <RotatingBanana modelPath="/assets/models/banana3d.glb" />
       </div>
