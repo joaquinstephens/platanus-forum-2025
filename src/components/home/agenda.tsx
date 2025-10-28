@@ -25,13 +25,9 @@ interface AgendaItem {
 
 const AGENDA_ITEMS: AgendaItem[] = [
   {
-    time: { start: '08:30', end: '09:30' },
-    title: 'Desayuno',
+    time: { start: '08:30', end: '09:50' },
+    title: 'Desayuno + contexto del evento',
     isBreak: true
-  },
-  {
-    time: { start: '09:30', end: '09:50' },
-    title: 'Apertura de Platanus',
   },
   {
     time: { start: '09:50', end: '10:00' },
@@ -50,7 +46,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
   {
     time: { start: '11:00', end: '12:00' },
     title: 'Coliseo en vivo',
-    description: 'Dos de nuestros mentores conversan con dos de nuestras startups sobre los desafíos de sus negocios.',
+    description: 'Dos de nuestros mentores hacen una sesión de mentoría en vivo a dos de nuestras startups.',
     speakers: ["Jaime Arrieta", "Pedro Pineda"],
     profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.webp", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.webp"],
     taglines: ["CEO Buk", "CEO Fintual"],
@@ -70,7 +66,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
   },
   {
     time: { start: '13:00', end: '14:00' },
-    title: 'Almuerzo',
+    title: 'Almuerzo: en las terrazas del MUT por cuenta de Platanus.',
     isBreak: true
   },
   {
