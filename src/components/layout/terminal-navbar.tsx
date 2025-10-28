@@ -1,10 +1,10 @@
 import { Button } from '@/components/ui/button';
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
-import { ProgressiveBlur } from '@/components/ui/progressive-blur';
 
 export default function TerminalNavbar() {
-  const [history, setHistory] = useState<Array<{ command: string; output: string }>>(
+  const [showNavbar, setShowNavbar] = useState(false)
+  const [history] = useState<Array<{ command: string; output: string }>>(
     [
       {
         command: '',
@@ -12,12 +12,11 @@ export default function TerminalNavbar() {
       },
     ]
   )
-  const [scrolled, setScrolled] = useState(false)
-  const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 700)
+      const scrollThreshold = window.innerHeight * 0.4
+      setShowNavbar(window.scrollY > scrollThreshold)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -83,7 +82,7 @@ export default function TerminalNavbar() {
                         href={subPart}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary-foreground hover:underline transition-colors"
+                        className="text-primary-foreground font-mono uppercase hover:underline transition-colors"
                       >
                         {subPart}
                       </a>
@@ -93,7 +92,7 @@ export default function TerminalNavbar() {
                       <a
                         key={subIndex}
                         href={`mailto:${subPart}`}
-                        className="text-primary-foreground hover:underline"
+                        className="text-primary-foreground hover:underline font-mono uppercase"
                       >
                         {subPart}
                       </a>
@@ -111,11 +110,11 @@ export default function TerminalNavbar() {
 
   return (
     <header className={cn(
-      "z-50 bg-white/5 backdrop-blur-lg font-mono h-fit uppercase max-w-md w-full fixed left-1/2 -translate-x-1/2 bottom-0 border border-border transition-transform duration-150 ease-out",
-      scrolled ? 'translate-y-0 bottom-8' : 'translate-y-full'
+      "fixed w-full max-w-sm overflow-clip uppercase z-50 bg-white/5 backdrop-blur-lg font-mono left-1/2 -translate-x-1/2 border border-border transition-all duration-300 ease-out",
+      showNavbar ? "translate-y-0 bottom-8" : "translate-y-full bottom-0"
       )}
     >
-      <div className="bg-white/5 text-xs text-foreground/50 relative flex items-center gap-2 px-4 py-3">
+      <div className="bg-white/5 text-xs text-foreground/50 relative flex items-center gap-2 p-3">
         <div className="flex gap-1">
           <div className="size-2 rounded-full bg-red-600" />
           <div className="size-2 rounded-full bg-yellow-600" />
@@ -124,7 +123,7 @@ export default function TerminalNavbar() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-1 text-center">platanus @ forum-2025</div>
       </div>
 
-      <div className="flex justify-between gap-8 w-full p-4">
+      <div className="flex justify-between gap-8 text-left w-full p-4">
         <div className="space-y-8 w-full">
           <img
             src="/platanus.svg"
@@ -135,7 +134,7 @@ export default function TerminalNavbar() {
           />
 
           {history.map((entry, i) => (
-            <div key={i} className="space-y-1 !w-48 text-sm text-balance">
+            <div key={i} className="space-y-1 text-sm text-balance">
               <div className="text-neutral-300 leading-relaxed">{renderOutput(entry.output)}</div>
             </div>
           ))}
@@ -150,7 +149,6 @@ export default function TerminalNavbar() {
           </a>
         </Button>
       </div>
-      <div ref={bottomRef} />
     </header>
   )
 }

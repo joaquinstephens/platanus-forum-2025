@@ -199,7 +199,7 @@ export default function RotatingBanana({
 
       vec3 colorized = colorama(attractedUV, texel.rgb);
       // Control alpha: solid=true means fully opaque dots, solid=false means original alpha
-      float finalAlpha = uSolid ? 0.6 : texel.a * 0.6;
+      float finalAlpha = uSolid ? 0.75 : texel.a * 0.75;
       gl_FragColor = vec4(colorized, finalAlpha);
     }
   `;
@@ -591,9 +591,7 @@ export default function RotatingBanana({
   return (
     <div
       ref={containerRef}
-      className={`fixed z-10 mx-auto flex h-screen w-screen touch-none items-center justify-center transition-all duration-[250ms] ease-in ${
-        isLoaded ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-      }`}
+      className="fixed z-10 mx-auto flex h-screen w-screen touch-none items-center justify-center transition-all duration-[250ms] ease-in"
       style={{
         pointerEvents: isMobile || disableMouseInteractions ? 'none' : 'all',
       }}
