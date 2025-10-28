@@ -23,11 +23,11 @@ export default function Sponsors() {
           className="w-full p-8 md:p-16 flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
-          <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
+          <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
         </Link>
       </div>
 
-      <div className="bg-foreground/5 group relative flex flex-col w-full border-2 border-white/10 overflow-clip backdrop-blur-sm">
+      <div className="bg-foreground/5 relative flex flex-col w-full border-2 border-white/10 overflow-clip backdrop-blur-sm">
         <span className="uppercase mr-auto font-mono px-3 w-full text-center md:text-left py-1 text-base bg-white/10 text-foreground/35">
           Sponsors
         </span>
@@ -35,18 +35,18 @@ export default function Sponsors() {
         <div className="w-full divide-x-2 divide-white/10 flex">
           <Link
             to="https://www.buk.cl/"
-            className="flex-1 p-8 md:p-16 flex items-center justify-center"
+            className="flex-1 group p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
-            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
+            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
           </Link>
 
           <Link
             to="https://www.buk.cl/"
-            className="flex-1 p-8 md:p-16 flex items-center justify-center"
+            className="flex-1 group p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
-            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
+            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
           </Link>
         </div>
       </div>

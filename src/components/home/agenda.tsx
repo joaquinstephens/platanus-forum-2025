@@ -80,8 +80,8 @@ const AGENDA_ITEMS: AgendaItem[] = [
     title: 'Fireside chat con Francesco Crivelli',
     speakers: ["Francesco Crivelli"],
     tagline: "Robótica confiable y rápida para el mundo real.",
-    logo: "/mentors/epic-aerospace.png",
-    logoHeight: "h-5",
+    logo: "/logos/intuition.png",
+    logoHeight: "h-3.5",
     link: "https://www.linkedin.com/in/francesco-crivelli/",
     profileImage: "/lovable-uploads/Francesco.jpeg"
   },
@@ -95,7 +95,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     speakers: ["Ignacio Beliers"],
     tagline: "Llevando carga a órbita con vehículos espaciales.",
     logo: "/mentors/epic-aerospace.png",
-    logoHeight: "h-5",
+    logoHeight: "h-3.5",
     link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
     profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.png"
   },
@@ -131,7 +131,7 @@ export default function Agenda() {
 
       <div className="-mx-8 md:mx-0 overflow-x-auto">
         <table className="w-full border-collapse">
-          <thead className="sr-only md:not-sr-only">
+          <thead className="sr-only">
             <tr className="h-12 text-muted-foreground/70 !font-normal *:!font-normal *:!tracking-wide font-mono text-left uppercase *:px-4 border-b border-border">
               <th>Hora</th>
               <th>Título</th>

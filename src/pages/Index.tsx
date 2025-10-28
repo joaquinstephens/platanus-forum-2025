@@ -24,7 +24,7 @@ const Index = () => {
       <Sponsors />
 
       <div className="w-full flex flex-col items-center justify-center pb-8 pt-32 mx-auto">
-        <h2 className="z-10 font-mono text-3xl md:text-4xl max-w-5xl text-balance leading-tight uppercase">
+        <h2 className="z-20 font-mono text-3xl md:text-4xl max-w-5xl text-balance leading-tight uppercase">
           No te lo pierdas
         </h2>
       </div>
@@ -34,7 +34,7 @@ const Index = () => {
       <div className="relative -mt-[576px]">
         <PixelGridBottom gapMultiplier={4} />
 
-        <div className="md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 z-20 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
+        <div className="z-20 md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
           <img
             src="/platanus.svg"
             alt="Platanus logo"
