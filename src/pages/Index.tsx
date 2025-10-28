@@ -64,7 +64,7 @@ const Index = () => {
       </div>
 
       {/* <TerminalNavbar /> */}
-      <div className="z-50 [&_a]:pointer md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
+      <div className="z-50 [&_a]:pointer md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/25 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
         <img
           src="/platanus.svg"
           alt="Platanus logo"
