@@ -146,7 +146,7 @@ export default function Agenda() {
                         to={item.link}
                         target="_blank"
                         key={item.speakers[0]}
-                        className="mt-4 bg-foreground/5 group relative flex border border-neutral-800 overflow-clip backdrop-blur-lg"
+                        className="my-2 bg-white/[7%] group relative flex border border-neutral-800 overflow-clip backdrop-blur-lg"
                       >
                         <img
                           src={item.profileImage}
@@ -173,23 +173,23 @@ export default function Agenda() {
                     <td>
                       <div className="space-y-3">
                         <div>{item.title}</div>
-                        <div className="flex flex-row gap-3">
+                        <div className="flex flex-row gap-3 pb-3">
                           {item.speakers?.map((speaker, idx) => (
                             <Link
                               key={idx}
                               to={item.links?.[idx] || "#"}
                               target="_blank"
-                              className="bg-foreground/5 group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-clip flex-1"
+                              className="bg-white/[7%] group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-clip flex-1"
                             >
                               <img
                                 src={item.profileImages?.[idx]}
                                 alt={speaker}
                                 className="aspect-square grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 md:h-24 object-cover"
                               />
-                              <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-4 md:py-2 w-full h-full">
+                              <div className="text-left flex flex-col gap-0.5 items-start justify-start px-4 py-4 md:py-2 w-full h-full">
                                 <h3 className="font-mono uppercase text-white text-sm">{speaker}</h3>
                                 <p className="text-sm font-light text-muted-foreground/70">{item.taglines?.[idx]}</p>
-                                <img src={item.logos?.[idx]} alt={speaker} width={128} height={24} className="w-fit h-5 object-contain mt-3 ml-right" />
+                                <img src={item.logos?.[idx]} alt={speaker} width={128} height={24} className="w-fit object-left h-5 object-contain mt-3 ml-right" />
                               </div>
                             </Link>
                           ))}
@@ -201,7 +201,7 @@ export default function Agenda() {
               }
 
               return (
-                <tr key={index} className={cn("flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4", item.isBreak && "bg-white/5 backdrop-blur-sm")}>
+                <tr key={index} className={cn("flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4", item.isBreak && "bg-white/[7%] backdrop-blur-sm")}>
                   <td className="text-muted-foreground/70">
                     {item.time.start} - {item.time.end}
                   </td>

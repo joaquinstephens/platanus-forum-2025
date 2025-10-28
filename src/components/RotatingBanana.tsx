@@ -591,14 +591,14 @@ export default function RotatingBanana({
   return (
     <div
       ref={containerRef}
-      className="scale-[150%] md:scale-125 fixed z-10 mx-auto flex h-screen w-screen touch-none items-center justify-center transition-all duration-[250ms] ease-in"
+      className="fixed z-10 mx-auto flex h-screen w-screen overflow-hidden touch-none items-center justify-center transition-all duration-[250ms] ease-in"
       style={{
         pointerEvents: isMobile || disableMouseInteractions ? 'none' : 'all',
       }}
     >
       <canvas
         ref={canvasRef}
-        className="absolute h-full w-full"
+        className="scale-[150%] md:scale-125 absolute h-full w-full"
         style={{
           pointerEvents: isMobile || disableMouseInteractions ? 'none' : 'auto',
           touchAction: isMobile || disableMouseInteractions ? 'none' : 'auto',

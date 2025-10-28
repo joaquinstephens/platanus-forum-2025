@@ -110,8 +110,8 @@ export default function TerminalNavbar() {
 
   return (
     <header className={cn(
-      "sticky flex w-[calc(100%-64px)] shadow-2xl shadow-black items-center flex-col justify-center mx-auto md:max-w-sm overflow-clip uppercase z-50 bg-black/5 backdrop-blur-md font-mono md:left-1/2 md:-translate-x-1/2 border border-border transition-all duration-300 ease-out",
-      showNavbar ? "translate-y-0 inset-x-4 bottom-4 md:bottom-8" : "translate-y-full bottom-0"
+      "sticky flex mx-8 md:mx-auto shadow-2xl shadow-black items-center flex-col justify-center md:max-w-sm overflow-clip uppercase z-50 bg-black/5 backdrop-blur-md font-mono md:left-1/2 md:-translate-x-1/2 border border-border transition-all duration-300 ease-out",
+      showNavbar ? "translate-y-0 top-4 md:top-8" : "translate-y-full -top-96"
       )}
     >
       <div className="bg-white/10 w-full text-xs text-foreground/50 relative flex items-center gap-2 p-3">
@@ -123,14 +123,14 @@ export default function TerminalNavbar() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-1 text-center">platanus @ forum-2025</div>
       </div>
 
-      <div className="flex justify-between gap-5 items-center text-left w-full p-4">
+      <div className="flex flex-col justify-start gap-4 items-center text-left w-full p-4">
         {history.map((entry, i) => (
-          <div key={i} className="space-y-1 text-sm text-balance">
-            <div className="text-neutral-300 leading-relaxed">{renderOutput(entry.output)}</div>
+          <div key={i} className="space-y-1 text-sm w-full text-center text-balance">
+            <div className="leading-relaxed">{renderOutput(entry.output)}</div>
           </div>
         ))}
 
-        <Button className="relative gap-3" asChild>
+        <Button className="relative gap-3 w-full" asChild>
           <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer">
             <div className="relative">
               <div className="size-1 shrink-0 bg-primary-foreground shadow-[0_0_8px_2px_var(--tw-shadow-color)] shadow-primary-foreground" />

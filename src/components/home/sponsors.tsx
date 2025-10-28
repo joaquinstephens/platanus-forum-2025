@@ -20,7 +20,7 @@ export default function Sponsors() {
 
         <Link
           to="https://www.buk.cl/"
-          className="w-full p-8 flex items-center justify-center"
+          className="w-full p-8 md:p-16 flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
           <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
@@ -35,7 +35,7 @@ export default function Sponsors() {
         <div className="w-full divide-x-2 divide-white/10 flex">
           <Link
             to="https://www.buk.cl/"
-            className="flex-1 p-8 flex items-center justify-center"
+            className="flex-1 p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
             <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
@@ -43,7 +43,7 @@ export default function Sponsors() {
 
           <Link
             to="https://www.buk.cl/"
-            className="flex-1 p-8 flex items-center justify-center"
+            className="flex-1 p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
             <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />

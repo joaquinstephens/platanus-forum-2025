@@ -2,16 +2,11 @@ import { motion } from "motion/react"
 
 export default function Intro() {
   return (
-    <section className="*:mx-auto z-10 text-sm w-full pt-8 md:pt-0 px-8 pb-16 md:pb-64 mx-auto flex flex-col gap-8">
-      <span className="sr-only max-w-2xl font-mono uppercase text-4xl text-left w-full">
-        {'< El evento />'}
-      </span>
-
+    <section className="z-10 text-sm w-full max-w-full pt-8 md:pt-0 px-8 pb-16 md:pb-32 mx-auto flex flex-col items-center gap-8">
       <div className="max-w-2xl z-20 font-mono uppercase space-y-12 text-base md:text-xl text-center font-light *:leading-8">
         <motion.p
           initial={{ opacity: 0, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          whileOutOfView={{ opacity: 0, filter: "blur(10px)" }}
           viewport={{ margin: "-128px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
@@ -21,7 +16,6 @@ export default function Intro() {
         <motion.p
           initial={{ opacity: 0, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          whileOutOfView={{ opacity: 0, filter: "blur(10px)" }}
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
@@ -31,7 +25,6 @@ export default function Intro() {
         <motion.p
           initial={{ opacity: 0, filter: "blur(10px)" }}
           whileInView={{ opacity: 1, filter: "blur(0px)" }}
-          whileOutOfView={{ opacity: 0, filter: "blur(10px)" }}
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >

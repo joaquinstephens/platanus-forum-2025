@@ -218,7 +218,7 @@ export const Hero = () => {
           <FloatingElement depth={3} className="top-[95%] left-[55%] md:top-[70%] md:left-[77%]">
             <img src="/lovable-uploads/c7879c52-30b8-40cc-b12b-81ca3e49614d.png" alt="Forum attendees listening" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
-          <FloatingElement depth={1} className="sr-only md:not-sr-only md:top-[73%] md:left-[15%]">
+          <FloatingElement depth={1} className="sr-only md:top-[73%] md:left-[15%]">
             <img src="/lovable-uploads/51c77275-536b-4367-9b70-da20cf4ca6b2.png" alt="Speaker at Platanus Forum" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
           {/* <FloatingElement depth={2} className="top-[80%] left-[50%]">
