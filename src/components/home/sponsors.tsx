@@ -19,7 +19,7 @@ export default function Sponsors() {
           className="px-8 col-span-full flex-1 group flex items-center justify-center"
         >
           <div className="sr-only">Maxxa</div>
-          <img src="https://hack.platan.us/_next/image?url=%2Fassets%2Flogos%2Fmaxxa.png&w=3840&q=75" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
+          <img src="https://hack.platan.us/_next/image?url=%2Fassets%2Flogos%2Fmaxxa.png&w=3840&q=75" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" alt="MAXXA" />
         </Link>
 
         <Link
@@ -27,7 +27,7 @@ export default function Sponsors() {
           className="px-8 col-span-full w-1/2 flex-1 group flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
-          <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" />
+          <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 duration-300 transition-transform ease-out" alt="Buk" />
         </Link>
       </div>
       {/* <div

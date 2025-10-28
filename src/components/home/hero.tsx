@@ -165,7 +165,7 @@ export const Hero = () => {
         <Badge className="hidden gap-2.5">
           Forum 2025
         </Badge>
-        <h1 className="-mb-4 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
+        <h1 className="-mb-7 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
           Platanus Forum '25
         </h1>
 
@@ -173,7 +173,7 @@ export const Hero = () => {
           Un día para nuestros fundadores, inversionistas y amigos
         </p>
 
-        <div className="p-1 w-full max-w-64 space-y-4 items-center">
+        <div className="-mt-2 md:mt-0 p-1 w-full max-w-64 space-y-4 items-center">
           <Button className="w-full relative gap-4 z-10 pr-3" asChild>
             <a
               href="https://luma.com/event/evt-AL3g8z5AWIWgK8E"
