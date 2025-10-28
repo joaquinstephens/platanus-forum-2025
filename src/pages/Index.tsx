@@ -6,6 +6,7 @@ import TerminalNavbar from "@/components/layout/terminal-navbar";
 import RotatingBanana from "@/components/RotatingBanana";
 import PixelGridBottom from "@/components/home/pixel-grid-bottom";
 import { Link } from "react-router-dom";
+import { TerminalOutput } from "@/components/ui/terminal-output";
 
 const Index = () => {
 
@@ -27,9 +28,13 @@ const Index = () => {
         <h2 className="z-20 font-mono text-3xl md:text-4xl max-w-5xl text-balance leading-tight uppercase">
           No te lo pierdas
         </h2>
+
+        <div className="flex bg-black mt-2">
+          <TerminalOutput output={`Jueves 20.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`} />
+        </div>
       </div>
 
-      <TerminalNavbar />
+      {/* <TerminalNavbar /> */}
 
       <div className="relative -mt-[576px]">
         <PixelGridBottom gapMultiplier={4} />

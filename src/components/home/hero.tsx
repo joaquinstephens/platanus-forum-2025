@@ -4,93 +4,10 @@ import { Button } from "../ui/button";
 import RotatingBanana from "../RotatingBanana";
 import Floating, { FloatingElement } from "../ui/parallax-floating";
 import { Badge } from "../ui/badge";
+import { TerminalOutput } from "../ui/terminal-output";
 import { motion, stagger, useAnimate } from "motion/react"
 import Component from "@/components/ui/faulty-terminal";
 
-export const renderOutput = (output: string) => {
-  const markdownLinkRegex = /\(([^\)]+)\)\[([^\]]+)\]/g
-  const urlRegex = /(https?:\/\/[^\s]+)/g
-  const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g
-
-  const lines = output.split('\n')
-
-  return lines.map((line, lineIndex) => {
-    let parts: (string | { type: 'mdLink'; label: string; url: string })[] = []
-    let lastIndex = 0
-    let match
-
-    const mdLinkRegex = /\(([^\)]+)\)\[([^\]]+)\]/g
-    while ((match = mdLinkRegex.exec(line)) !== null) {
-      if (match.index > lastIndex) {
-        parts.push(line.substring(lastIndex, match.index))
-      }
-      parts.push({ type: 'mdLink', label: match[1], url: match[2] })
-      lastIndex = mdLinkRegex.lastIndex
-    }
-    if (lastIndex < line.length) {
-      parts.push(line.substring(lastIndex))
-    }
-
-    if (parts.length === 0) {
-      parts = [line]
-    }
-
-    return (
-      <div key={lineIndex}>
-        {parts.map((part, index) => {
-          if (typeof part === 'object' && part.type === 'mdLink') {
-            return (
-              <a
-                key={index}
-                href={part.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground underline !decoration-primary-foreground/25"
-              >
-                {part.label}
-              </a>
-            )
-          }
-
-          const textPart = typeof part === 'string' ? part : ''
-          let subParts = textPart.split(urlRegex)
-          subParts = subParts.flatMap((p) => (urlRegex.test(p) ? [p] : p.split(emailRegex)))
-
-          return (
-            <span key={index}>
-              {subParts.map((subPart, subIndex) => {
-                if (urlRegex.test(subPart)) {
-                  return (
-                    <a
-                      key={subIndex}
-                      href={subPart}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-foreground hover:underline transition-colors"
-                    >
-                      {subPart}
-                    </a>
-                  )
-                } else if (emailRegex.test(subPart)) {
-                  return (
-                    <a
-                      key={subIndex}
-                      href={`mailto:${subPart}`}
-                      className="text-primary-foreground hover:underline"
-                    >
-                      {subPart}
-                    </a>
-                  )
-                }
-                return <span key={subIndex}>{subPart}</span>
-              })}
-            </span>
-          )
-        })}
-      </div>
-    )
-  })
-}
 
 // const GALLERY_IMAGES = [
 //   {
@@ -187,11 +104,11 @@ export const Hero = () => {
     >
       <div className="z-10 md:hidden absolute inset-x-0 w-screen top-0 bg-gradient-to-b from-black to-transparent h-24" />
 
-      <img src="/mut.jpg" alt="Oficinas de Buk" className="grayscale -z-10 w-full h-full inset-0 absolute object-cover opacity-60" />
-      <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%)' }} />
-      <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)' }} />
+      <img src="/mut.jpg" alt="Oficinas de Buk" className="hidden grayscale -z-10 w-full h-full inset-0 absolute object-cover opacity-60" />
+      {/* <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%)' }} />
+      <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)' }} /> */}
 
-      <div className="absolute inset-0 flex w-full h-full min-h-svh justify-center items-center overflow-hidden">
+      <div className="hidden absolute inset-0 w-full h-full min-h-svh justify-center items-center overflow-hidden">
         <Floating sensitivity={1} easingFactor={0.08}>
           <FloatingElement depth={1} className="top-[8%] left-[11%]">
             <img
@@ -241,17 +158,22 @@ export const Hero = () => {
 
       <motion.div
         ref={heroRef}
-        className="z-10 min-h-svh flex flex-col items-center justify-center space-y-8 md:space-y-10 w-full mx-auto max-w-screen-xl transition-all duration-75 relative"
+        className="z-10 min-h-svh flex flex-col items-center justify-center gap-8 md:gap-10 w-full mx-auto max-w-screen-xl transition-all duration-75 relative"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.88, delay: 0.95 }}
+        transition={{ duration: 0.88, delay: 0.3 }}
       >
-        <Badge className="gap-2.5">
+        <Badge className="hidden gap-2.5">
           Forum 2025
         </Badge>
-        <h1 className="font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
-          Un día para nuestros fundadores, inversionistas y amigos
+        <h1 className="-mb-4 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
+          Platanus Forum '25
         </h1>
+
+        <p className="font-mono w-full px-8 uppercase text-sm text-muted-foreground">
+          Un día para nuestros fundadores, inversionistas y amigos
+        </p>
+
         <div className="p-1 w-full max-w-xs space-y-4 items-center">
           <Button className="w-full relative gap-4 z-10 pr-3" asChild>
             <Link to="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer">
@@ -262,9 +184,7 @@ export const Hero = () => {
               Asegura tu cupo
             </Link>
           </Button>
-          <div className="p-4 space-y-2 text-sm font-mono uppercase text-center leading-4 text-balance text-neutral-300">
-            {renderOutput(`Jueves 21.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`)}
-          </div>
+          <TerminalOutput output={`Jueves 20.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`} />
         </div>
       </motion.div>
     </section>

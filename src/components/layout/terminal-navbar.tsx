@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react'
 import { cn } from '@/lib/utils'
+import { TerminalOutput } from '@/components/ui/terminal-output'
 
 export default function TerminalNavbar() {
   const [showNavbar, setShowNavbar] = useState(false)
@@ -23,90 +24,6 @@ export default function TerminalNavbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const renderOutput = (output: string) => {
-    const markdownLinkRegex = /\(([^\)]+)\)\[([^\]]+)\]/g
-    const urlRegex = /(https?:\/\/[^\s]+)/g
-    const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g
-
-    const lines = output.split('\n')
-
-    return lines.map((line, lineIndex) => {
-      let parts: (string | { type: 'mdLink'; label: string; url: string })[] = []
-      let lastIndex = 0
-      let match
-
-      const mdLinkRegex = /\(([^\)]+)\)\[([^\]]+)\]/g
-      while ((match = mdLinkRegex.exec(line)) !== null) {
-        if (match.index > lastIndex) {
-          parts.push(line.substring(lastIndex, match.index))
-        }
-        parts.push({ type: 'mdLink', label: match[1], url: match[2] })
-        lastIndex = mdLinkRegex.lastIndex
-      }
-      if (lastIndex < line.length) {
-        parts.push(line.substring(lastIndex))
-      }
-
-      if (parts.length === 0) {
-        parts = [line]
-      }
-
-      return (
-        <div key={lineIndex}>
-          {parts.map((part, index) => {
-            if (typeof part === 'object' && part.type === 'mdLink') {
-              return (
-                <a
-                  key={index}
-                  href={part.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground hover:underline transition-colors"
-                >
-                  {part.label}
-                </a>
-              )
-            }
-
-            const textPart = typeof part === 'string' ? part : ''
-            let subParts = textPart.split(urlRegex)
-            subParts = subParts.flatMap((p) => (urlRegex.test(p) ? [p] : p.split(emailRegex)))
-
-            return (
-              <span key={index}>
-                {subParts.map((subPart, subIndex) => {
-                  if (urlRegex.test(subPart)) {
-                    return (
-                      <a
-                        key={subIndex}
-                        href={subPart}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary-foreground font-mono uppercase hover:underline transition-colors"
-                      >
-                        {subPart}
-                      </a>
-                    )
-                  } else if (emailRegex.test(subPart)) {
-                    return (
-                      <a
-                        key={subIndex}
-                        href={`mailto:${subPart}`}
-                        className="text-primary-foreground hover:underline font-mono uppercase"
-                      >
-                        {subPart}
-                      </a>
-                    )
-                  }
-                  return <span key={subIndex}>{subPart}</span>
-                })}
-              </span>
-            )
-          })}
-        </div>
-      )
-    })
-  }
 
   return (
     <header className={cn(
@@ -125,9 +42,7 @@ export default function TerminalNavbar() {
 
       <div className="flex flex-col justify-start gap-4 items-center text-left w-full p-4">
         {history.map((entry, i) => (
-          <div key={i} className="space-y-1 text-sm w-full text-center text-balance">
-            <div className="leading-relaxed">{renderOutput(entry.output)}</div>
-          </div>
+          <TerminalOutput key={i} output={entry.output} className="p-0 space-y-1" />
         ))}
 
         <Button className="relative gap-3 w-full" asChild>

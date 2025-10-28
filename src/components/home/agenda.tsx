@@ -11,6 +11,7 @@ interface AgendaItem {
   isBreak?: boolean
   backgroundImg?: string
   tagline?: string
+  description?: string
   logo?: string
   link?: string
   profileImage?: string
@@ -49,6 +50,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
   {
     time: { start: '11:00', end: '12:00' },
     title: 'Coliseo en vivo',
+    description: 'Dos de nuestros mentores conversan con dos de nuestras startups sobre los desafíos de sus negocios.',
     speakers: ["Jaime Arrieta", "Pedro Pineda"],
     profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.png", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.png"],
     taglines: ["CEO Buk", "CEO Fintual"],
@@ -88,6 +90,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
   {
     time: { start: '15:30', end: '16:30' },
     title: 'Conoce a startups de Platanus',
+    description: 'Cinco startups cuentan en qué están metidas. No es un pitch, es lo que realmente están construyendo.',
   },
   {
     time: { start: '16:30', end: '17:30' },
@@ -125,7 +128,7 @@ export default function Agenda() {
         </span>
 
         <p className="text-muted-foreground/70 ml-2">
-          (21.nov)
+          (20.nov)
         </p>
       </div>
 
@@ -144,7 +147,7 @@ export default function Agenda() {
               if (rowType === "fireside") {
                 return (
                   <tr key={index} className="flex flex-col md:table-row md:flex-none border-b border-border align-top font-mono uppercase h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4 relative">
-                    <td className="text-muted-foreground/70 relative z-10">
+                    <td className="text-foreground relative z-10">
                       {item.time.start} - {item.time.end}
                     </td>
                     <td className="text-white relative z-10">
@@ -174,25 +177,31 @@ export default function Agenda() {
               if (rowType === "coliseo") {
                 return (
                   <tr key={index} className="flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4">
-                    <td className="text-muted-foreground/70">
+                    <td className="text-foreground">
                       {item.time.start} - {item.time.end}
                     </td>
+
                     <td>
                       <div className="space-y-3">
-                        <div>{item.title}</div>
+                        <div>
+                          {item.title}
+                          {item.description && <p className="max-w-lg text-balance text-muted-foreground/70 mt-0.5">{item.description}</p>}
+                        </div>
                         <div className="flex flex-row gap-3 pb-3">
                           {item.speakers?.map((speaker, idx) => (
                             <Link
                               key={idx}
                               to={item.links?.[idx] || "#"}
                               target="_blank"
-                              className="bg-white/[7%] group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-clip flex-1"
+                              className="bg-white/[7%] group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
                             >
-                              <img
-                                src={item.profileImages?.[idx]}
-                                alt={speaker}
-                                className="aspect-square grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 md:h-24 object-cover"
-                              />
+                              <div className="h-20 md:h-24 w-20 md:w-24 flex-shrink-0 overflow-hidden">
+                                <img
+                                  src={item.profileImages?.[idx]}
+                                  alt={speaker}
+                                  className="grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 w-full h-full object-cover"
+                                />
+                              </div>
                               <div className="text-left flex flex-col gap-0.5 items-start justify-start px-4 py-4 md:py-2 w-full h-full">
                                 <h3 className="font-mono uppercase text-white text-sm">{speaker}</h3>
                                 <p className="text-sm font-light text-muted-foreground/70">{item.taglines?.[idx]}</p>
@@ -209,11 +218,14 @@ export default function Agenda() {
 
               return (
                 <tr key={index} className={cn("flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4", item.isBreak && "bg-white/[7%] backdrop-blur-sm")}>
-                  <td className="text-muted-foreground/70">
+                  <td className="text-foreground">
                     {item.time.start} - {item.time.end}
                   </td>
                   <td>
-                    {item.title}
+                    <div>
+                      {item.title}
+                      {item.description && <p className="max-w-lg text-balance text-muted-foreground/70 mt-0.5">{item.description}</p>}
+                    </div>
                   </td>
                 </tr>
               )
