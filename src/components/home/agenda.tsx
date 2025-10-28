@@ -158,11 +158,13 @@ export default function Agenda() {
                         key={item.speakers[0]}
                         className="my-2 bg-white/[7%] group relative flex border border-neutral-800 overflow-clip backdrop-blur-lg"
                       >
-                        <img
-                          src={item.profileImage}
-                          alt={item.speakers[0]}
-                          className="grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 aspect-square h-24 object-cover"
-                        />
+                        <div className="h-20 md:h-24 w-20 md:w-24 flex-shrink-0 overflow-hidden">
+                          <img
+                            src={item.profileImage}
+                            alt={item.speakers[0]}
+                            className="grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 w-full h-full object-cover"
+                          />
+                        </div>
                         <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
                           <h3 className="font-mono uppercase text-white text-sm">{item.speakers[0]}</h3>
                           <p className="text-sm font-light text-muted-foreground/70">{item.tagline}</p>

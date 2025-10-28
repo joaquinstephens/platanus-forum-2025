@@ -5,7 +5,7 @@ interface GallerySliderProps {
   speed?: number;
 }
 
-export function GallerySlider({ direction = "left", speed = 20 }: GallerySliderProps) {
+export function GallerySlider({ direction = "left", speed = 30 }: GallerySliderProps) {
   const duplicatedImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES];
   const animationName = direction === "left" ? "scroll-left" : "scroll-right";
 

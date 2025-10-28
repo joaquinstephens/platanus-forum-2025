@@ -7,7 +7,7 @@ export default function Gallery() {
         {'< Un poco del año pasado />'}
       </span>
       <div className="w-full">
-        <GallerySlider direction="left" speed={20} />
+        <GallerySlider direction="left" />
       </div>
     </section>
   );
