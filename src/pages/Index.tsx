@@ -17,8 +17,7 @@ const Index = () => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const threshold = window.innerHeight * 0.7;
-      const opacity = Math.min(0.01, Math.max(0, (scrolled - threshold) / threshold));
-      setBgOpacity(opacity);
+      setBgOpacity(scrolled > threshold ? 1 : 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +26,7 @@ const Index = () => {
 
   return (
     <main className="text-center min-h-screen">
-      <div className="fixed size-screen bg-background backdrop-blur-[2px] inset-0 -z-10" style={{ opacity: bgOpacity }} />
+      <div className="fixed size-screen bg-background/1 backdrop-blur-sm inset-0 -z-10" style={{ opacity: bgOpacity }} />
       <div className="w-full overflow-hidden -z-20 fixed inset-0 flex items-center justify-center pointer-events-none" style={{ animation: 'fade-in-delayed 0.8s ease-in-out 0.6s forwards' }}>
         <RotatingBanana modelPath="/assets/models/banana3d.glb" />
       </div>
