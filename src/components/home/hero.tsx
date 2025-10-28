@@ -192,7 +192,7 @@ export const Hero = () => {
       <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)' }} />
 
       <div className="absolute inset-0 flex w-full h-full min-h-svh justify-center items-center overflow-hidden">
-        <Floating sensitivity={2} easingFactor={0.08}>
+        <Floating sensitivity={1} easingFactor={0.08}>
           <FloatingElement depth={1} className="top-[8%] left-[11%]">
             <img
               src="/lovable-uploads/25090221-6a61-4858-8aab-b1922cde6c82.png"
