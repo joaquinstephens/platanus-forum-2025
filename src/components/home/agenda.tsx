@@ -98,7 +98,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     speakers: ["Ignacio Beliers"],
     tagline: "Llevando carga a órbita con vehículos espaciales.",
     logo: "/mentors/epic-aerospace.png",
-    logoHeight: "h-3.5",
+    logoHeight: "h-3",
     link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
     profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.png"
   },
