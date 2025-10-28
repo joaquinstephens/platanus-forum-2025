@@ -1,8 +1,8 @@
 export default function Intro() {
   return (
-    <section className="*:mx-auto z-10 text-sm w-full px-8 pb-64 mx-auto flex flex-col gap-8">
-      <span className="opacity-25 text-muted brightness-[400%] max-w-xl -mb-0 font-mono uppercase w-full text-center text-8xl">
-        El evento
+    <section className="*:mx-auto z-10 text-sm w-full pt-24 md:pt-0 px-8 pb-32 md:pb-64 mx-auto flex flex-col gap-8">
+      <span className="sr-only max-w-2xl font-mono uppercase text-4xl text-left w-full">
+        {'< El evento />'}
       </span>
 
 
@@ -10,7 +10,7 @@ export default function Intro() {
         {'< El evento />'}
       </span> */}
 
-      <div className="max-w-2xl z-20 font-sans space-y-10 text-2xl text-left font-light leading-8">
+      <div className="max-w-2xl z-20 font-sans space-y-12 text-lg md:text-xl text-left font-light *:leading-8">
         <p> A lo largo del tiempo han existido lugares donde se concentra la genialidad. Atenas, Florencia, Silicon Valley. Momentos en que la gente correcta se junta y las ideas fluyen. </p>
 
         <p> En Platanus creemos que ese tipo de cosas pueden pasar acá también. Que no se trata de un lugar, sino de una comunidad que comparte curiosidad, talento y ganas de construir. </p>

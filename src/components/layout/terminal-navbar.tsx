@@ -110,11 +110,11 @@ export default function TerminalNavbar() {
 
   return (
     <header className={cn(
-      "fixed w-full max-w-sm overflow-clip uppercase z-50 bg-white/5 backdrop-blur-lg font-mono left-1/2 -translate-x-1/2 border border-border transition-all duration-300 ease-out",
-      showNavbar ? "translate-y-0 bottom-8" : "translate-y-full bottom-0"
+      "sticky flex w-[calc(100%-32px)] shadow-2xl shadow-black items-center flex-col justify-center mx-auto md:max-w-sm overflow-clip uppercase z-50 bg-black/5 backdrop-blur-lg font-mono md:left-1/2 md:-translate-x-1/2 border border-border transition-all duration-300 ease-out",
+      showNavbar ? "translate-y-0 inset-x-4 bottom-4 md:bottom-8" : "translate-y-full bottom-0"
       )}
     >
-      <div className="bg-white/5 text-xs text-foreground/50 relative flex items-center gap-2 p-3">
+      <div className="bg-white/5 w-full text-xs text-foreground/50 relative flex items-center gap-2 p-3">
         <div className="flex gap-1">
           <div className="size-2 rounded-full bg-red-600" />
           <div className="size-2 rounded-full bg-yellow-600" />
@@ -123,23 +123,14 @@ export default function TerminalNavbar() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-1 text-center">platanus @ forum-2025</div>
       </div>
 
-      <div className="flex justify-between gap-8 text-left w-full p-4">
-        <div className="space-y-8 w-full">
-          <img
-            src="/platanus.svg"
-            alt="Platanus logo"
-            width={144}
-            height={32}
-            className="h-8 z-10"
-          />
+      <div className="flex justify-between gap-5 items-center text-left w-full p-4">
+        {history.map((entry, i) => (
+          <div key={i} className="space-y-1 text-sm text-balance">
+            <div className="text-neutral-300 leading-relaxed">{renderOutput(entry.output)}</div>
+          </div>
+        ))}
 
-          {history.map((entry, i) => (
-            <div key={i} className="space-y-1 text-sm text-balance">
-              <div className="text-neutral-300 leading-relaxed">{renderOutput(entry.output)}</div>
-            </div>
-          ))}
-        </div>
-        <Button className="relative gap-3 !h-full" asChild>
+        <Button className="relative gap-3" asChild>
           <a href="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer">
             <div className="relative">
               <div className="size-1 shrink-0 bg-primary-foreground shadow-[0_0_8px_2px_var(--tw-shadow-color)] shadow-primary-foreground" />

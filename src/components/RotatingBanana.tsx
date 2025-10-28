@@ -591,7 +591,7 @@ export default function RotatingBanana({
   return (
     <div
       ref={containerRef}
-      className="fixed z-10 mx-auto flex h-screen w-screen touch-none items-center justify-center transition-all duration-[250ms] ease-in"
+      className="scale-[150%] md:scale-125 fixed z-10 mx-auto flex h-screen w-screen touch-none items-center justify-center transition-all duration-[250ms] ease-in"
       style={{
         pointerEvents: isMobile || disableMouseInteractions ? 'none' : 'all',
       }}

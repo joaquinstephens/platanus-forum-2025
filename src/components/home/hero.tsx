@@ -7,7 +7,7 @@ import { Badge } from "../ui/badge";
 import { motion, stagger, useAnimate } from "motion/react"
 import Component from "@/components/ui/faulty-terminal";
 
-const renderOutput = (output: string) => {
+export const renderOutput = (output: string) => {
   const markdownLinkRegex = /\(([^\)]+)\)\[([^\]]+)\]/g
   const urlRegex = /(https?:\/\/[^\s]+)/g
   const emailRegex = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g
@@ -143,9 +143,9 @@ const renderOutput = (output: string) => {
 //   },
 // ];
 
-const FADE_END_BLUR = 120;
-const FADE_DURATION_PERCENT = 0.6;
-const FADE_START_PERCENT = 0.2; // Start fade at 20% of scroll
+const FADE_END_BLUR = 48;
+const FADE_DURATION_PERCENT = 0.5;
+const FADE_START_PERCENT = 0.1; // Start fade at 20% of scroll
 
 const linear = (t: number) => t;
 
@@ -199,25 +199,25 @@ export const Hero = () => {
               className="w-16 h-16 md:w-24 md:h-24 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
             />
           </FloatingElement>
-          <FloatingElement depth={2} className="top-[10%] left-[32%]">
+          <FloatingElement depth={2} className="top-[19%] left-[56%] md:top-[10%] md:left-[32%]">
             <img src="/lovable-uploads/8e7b4326-eeeb-40eb-abbe-524536502eb5.png" alt="Earth AI presentation at forum"             className="w-20 h-20 md:w-28 md:h-28 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform" />
           </FloatingElement>
-          <FloatingElement depth={3} className="top-[2%] left-[53%]">
+          <FloatingElement depth={3} className="top-[2%] left-[85%] md:top-[2%] md:left-[53%]">
             <img src="/lovable-uploads/f9903767-5b74-4659-81a8-bae8ce2b2692.png" alt="Gizmodo asteroid mining presentation"             className="w-28 h-40 md:w-40 md:h-52 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
  />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[0%] left-[83%]">
+          <FloatingElement depth={1} className="top-[83%] left-[10%] md:top-[0%] md:left-[83%]">
             <img src="/lovable-uploads/ed64df99-87c0-4897-a3dc-1672f0425525.png" alt="AstroForge speaker presenting"             className="w-24 h-24 md:w-32 md:h-32 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
  />
           </FloatingElement>
-          <FloatingElement depth={2} className="top-[40%] left-[2%]">
+          <FloatingElement depth={2} className="top-[73%] left-[65%] md:top-[40%] md:left-[2%]">
             <img src="/lovable-uploads/13884d98-0fcf-4d2f-babd-806f510eabcb.png" alt="Platanus Forum presentation"             className="w-28 h-28 md:w-36 md:h-36 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform"
  />
           </FloatingElement>
-          <FloatingElement depth={3} className="top-[70%] left-[77%]">
+          <FloatingElement depth={3} className="top-[95%] left-[55%] md:top-[70%] md:left-[77%]">
             <img src="/lovable-uploads/c7879c52-30b8-40cc-b12b-81ca3e49614d.png" alt="Forum attendees listening" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[73%] left-[15%]">
+          <FloatingElement depth={1} className="sr-only md:not-sr-only md:top-[73%] md:left-[15%]">
             <img src="/lovable-uploads/51c77275-536b-4367-9b70-da20cf4ca6b2.png" alt="Speaker at Platanus Forum" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
           {/* <FloatingElement depth={2} className="top-[80%] left-[50%]">
@@ -248,7 +248,7 @@ export const Hero = () => {
         <Badge className="gap-2.5">
           Forum 2025
         </Badge>
-        <h1 className="font-mono text-2xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
+        <h1 className="font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
           Un día para nuestros fundadores, inversionistas y amigos
         </h1>
         <div className="p-1 w-full max-w-xs space-y-4 items-center">
@@ -266,7 +266,6 @@ export const Hero = () => {
           </div>
         </div>
       </motion.div>
-
     </section>
   );
 };

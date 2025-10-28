@@ -81,7 +81,7 @@
 }
 
 body {
-  @apply antialiased bg-background text-foreground selection:bg-yellow-300/20 underline-offset-[3px];
+  @apply *:w-screen *:overflow-x-hidden antialiased bg-background text-foreground selection:bg-yellow-300/20 underline-offset-[3px];
 }
 
 @layer base {
@@ -97,6 +97,15 @@ body {
     }
   30%, 60% {
     background-position: calc(100% + var(--shiny-width)) 0;
+    }
+  }
+
+  @keyframes fade-in-delayed {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.5;
     }
   }
 }
