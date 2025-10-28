@@ -241,7 +241,7 @@ export const Hero = () => {
 
       <motion.div
         ref={heroRef}
-        className="z-10 min-h-svh flex flex-col items-center justify-center space-y-8 w-full mx-auto max-w-screen-xl transition-all duration-75 relative"
+        className="z-10 min-h-svh flex flex-col items-center justify-center space-y-8 md:space-y-10 w-full mx-auto max-w-screen-xl transition-all duration-75 relative"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.88, delay: 0.95 }}
