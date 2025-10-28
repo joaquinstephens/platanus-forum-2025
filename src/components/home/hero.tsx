@@ -165,7 +165,7 @@ export const Hero = () => {
         <Badge className="hidden gap-2.5">
           Forum 2025
         </Badge>
-        <h1 className="-mb-7 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
+        <h1 className="-mb-7 md:-mb-5 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
           Platanus Forum '25
         </h1>
 
