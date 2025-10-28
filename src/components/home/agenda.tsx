@@ -14,10 +14,12 @@ interface AgendaItem {
   logo?: string
   link?: string
   profileImage?: string
+  logoHeight?: string
   taglines?: string[]
   logos?: string[]
   links?: string[]
   profileImages?: string[]
+  logoHeights?: string[]
 }
 
 const AGENDA_ITEMS: AgendaItem[] = [
@@ -39,7 +41,8 @@ const AGENDA_ITEMS: AgendaItem[] = [
     title: 'Fireside chat con Roman Teslyuk',
     speakers: ["Roman Teslyuk"],
     tagline: "IA para desenterrar tesoros mineros.",
-    logo: "/mentors/epic-aerospace.png",
+    logo: "/logos/earth-ai.png",
+    logoHeight: "h-4",
     link: "https://www.linkedin.com/in/roman-teslyuk-a344881a/",
     profileImage: "/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.png"
   },
@@ -49,7 +52,8 @@ const AGENDA_ITEMS: AgendaItem[] = [
     speakers: ["Jaime Arrieta", "Pedro Pineda"],
     profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.png", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.png"],
     taglines: ["CEO Buk", "CEO Fintual"],
-    logos: ["/public/logos/logo-buk.svg", "/public/logos/fintual.svg"],
+    logos: ["/logos/buk.png", "/logos/fintual.png"],
+    logoHeights: ["h-5", "h-5"],
     links: ["https://cl.linkedin.com/in/jaime-arrieta-boetsch-ab214150", "https://cl.linkedin.com/in/pedro-pineda-fintual"]
   },
   {
@@ -57,7 +61,8 @@ const AGENDA_ITEMS: AgendaItem[] = [
     title: 'Fireside chat con Roger Rea',
     speakers: ["Roger Rea"],
     tagline: "Créditos grupales para microempresas en México.",
-    logo: "/mentors/epic-aerospace.png",
+    logo: "/logos/grupalia.png",
+    logoHeight: "h-5",
     link: "https://www.linkedin.com/in/rogeliorea/",
     profileImage: "/lovable-uploads/roger.jpeg"
   },
@@ -76,6 +81,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     speakers: ["Francesco Crivelli"],
     tagline: "Robótica confiable y rápida para el mundo real.",
     logo: "/mentors/epic-aerospace.png",
+    logoHeight: "h-5",
     link: "https://www.linkedin.com/in/francesco-crivelli/",
     profileImage: "/lovable-uploads/Francesco.jpeg"
   },
@@ -89,6 +95,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     speakers: ["Ignacio Beliers"],
     tagline: "Llevando carga a órbita con vehículos espaciales.",
     logo: "/mentors/epic-aerospace.png",
+    logoHeight: "h-5",
     link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
     profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.png"
   },
@@ -153,10 +160,10 @@ export default function Agenda() {
                           alt={item.speakers[0]}
                           className="grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 aspect-square h-24 object-cover"
                         />
-                        <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 grayscale w-full h-full">
+                        <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
                           <h3 className="font-mono uppercase text-white text-sm">{item.speakers[0]}</h3>
                           <p className="text-sm font-light text-muted-foreground/70">{item.tagline}</p>
-                          <img src={item.logo} alt={item.speakers[0]} width={128} height={24} className="hidden md:block h-5 object-contain mt-4" />
+                          <img src={item.logo} alt={item.speakers[0]} width={108} height={24} className={cn("w-fit object-left object-contain mt-4 ml-right", item.logoHeight || "h-4")} />
                         </div>
                       </Link>
                     </td>
@@ -189,7 +196,7 @@ export default function Agenda() {
                               <div className="text-left flex flex-col gap-0.5 items-start justify-start px-4 py-4 md:py-2 w-full h-full">
                                 <h3 className="font-mono uppercase text-white text-sm">{speaker}</h3>
                                 <p className="text-sm font-light text-muted-foreground/70">{item.taglines?.[idx]}</p>
-                                <img src={item.logos?.[idx]} alt={speaker} width={128} height={24} className="w-fit object-left h-5 object-contain mt-3 ml-right" />
+                                <img src={item.logos?.[idx]} alt={speaker} width={108} height={20} className={cn("w-fit object-left object-contain mt-3 ml-right", item.logoHeights?.[idx] || "h-5")} />
                               </div>
                             </Link>
                           ))}

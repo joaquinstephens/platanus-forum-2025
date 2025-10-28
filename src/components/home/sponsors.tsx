@@ -23,7 +23,7 @@ export default function Sponsors() {
           className="w-full p-8 md:p-16 flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
-          <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
+          <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
         </Link>
       </div>
 
@@ -38,7 +38,7 @@ export default function Sponsors() {
             className="flex-1 p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
-            <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
+            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
           </Link>
 
           <Link
@@ -46,7 +46,7 @@ export default function Sponsors() {
             className="flex-1 p-8 md:p-16 flex items-center justify-center"
           >
             <div className="sr-only">Buk</div>
-            <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
+            <img src="/logos/buk.png" className="scale-100 md:group-hover:scale-105 ease-out" />
           </Link>
         </div>
       </div>
