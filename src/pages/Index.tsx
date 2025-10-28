@@ -65,7 +65,7 @@ const Index = () => {
 
       {/* <TerminalNavbar /> */}
 
-      <div className="relative -mt-[576px]">
+      <div className="relative -z-10 -mt-[576px]">
         <PixelGridBottom gapMultiplier={4} />
 
         <div className="z-20 md:max-w-sm text-muted-foreground absolute px-8 bottom-8 left-1/2 -translate-x-1/2 flex justify-between w-full font-mono uppercase [&_a]:underline [&_a]:decoration-muted-foreground/15 [&_a]:px-2 [&_a]:py-1 [&_a]:bg-black">
