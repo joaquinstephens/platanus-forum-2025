@@ -61,7 +61,7 @@ export function GallerySlider({ direction = "left", speed = 30 }: GallerySliderP
           {duplicatedImages.map((image, index) => (
             <div
               key={index}
-              className="gallery-item grayscale hover:grayscale-0 flex-shrink-0 w-32 h-32 md:w-64 md:h-64 lg:w-80 lg:h-80 overflow-hidden shadow-2xl"
+              className="gallery-ite grayscale hover:grayscale-0 flex-shrink-0 w-32 h-32 md:w-64 md:h-64 lg:w-80 lg:h-80 overflow-hidden shadow-2xl"
             >
               <img
                 src={image.src}
