@@ -10,6 +10,7 @@ import { useAnimationFrame } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { useMousePositionRef } from "@/hooks/use-mouse-position-ref"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 interface FloatingContextType {
   registerElement: (id: string, element: HTMLDivElement, depth: number) => void
@@ -33,6 +34,7 @@ const Floating = ({
   ...props
 }: FloatingProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const isMobile = useIsMobile()
   const elementsMap = useRef(
     new Map<
       string,
@@ -61,7 +63,7 @@ const Floating = ({
   }, [])
 
   useAnimationFrame(() => {
-    if (!containerRef.current) return
+    if (!containerRef.current || isMobile) return
 
     elementsMap.current.forEach((data) => {
       const strength = (data.depth * sensitivity) / 20

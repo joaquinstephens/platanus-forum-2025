@@ -45,7 +45,7 @@ export const renderOutput = (output: string) => {
                 href={part.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-foreground underline !decoration-primary-foreground/15"
+                className="text-primary-foreground underline !decoration-primary-foreground/25"
               >
                 {part.label}
               </a>
@@ -185,6 +185,7 @@ export const Hero = () => {
       className="sticky top-0 inset-x-0"
       style={{ filter: `blur(${blurAmount}px)`, opacity: Math.max(0, 1 - blurAmount / FADE_END_BLUR), pointerEvents: blurAmount > FADE_END_BLUR * 0.5 ? 'none' : 'auto' }}
     >
+      <div className="z-10 md:hidden absolute inset-x-0 w-screen top-0 bg-gradient-to-b from-black to-transparent h-24" />
 
       <img src="/mut.jpg" alt="Oficinas de Buk" className="grayscale -z-10 w-full h-full inset-0 absolute object-cover opacity-60" />
       <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%)' }} />
@@ -261,7 +262,7 @@ export const Hero = () => {
               Asegura tu cupo
             </Link>
           </Button>
-          <div className="p-4 bg-foreground/5 backdrop-blur-sm space-y-2 text-sm font-mono uppercase text-center leading-4 text-balance text-neutral-300">
+          <div className="p-4 space-y-2 text-sm font-mono uppercase text-center leading-4 text-balance text-neutral-300">
             {renderOutput(`Jueves 21.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`)}
           </div>
         </div>

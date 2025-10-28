@@ -9,46 +9,46 @@ export default function Sponsors() {
   } as CSSProperties;
 
   return (
-    <section className="mt-32 mb-24 max-w-screen-lg w-full px-8 mx-auto flex flex-col justify-start items-start gap-8">
-      <div className="-mb-4 h-0.5 w-full bg-yellow-300" />
-
-      <span className="uppercase mr-auto font-mono px-4 py-2 text-3xl bg-yellow-300 text-black">
-        Main sponsor
-      </span>
-
-      <Link
-        to="https://www.buk.cl/"
+    <section className="my-12 md:my-24 max-w-screen-lg w-full px-8 mx-auto flex flex-col justify-start items-start gap-8">
+      <div
+        className="bg-foreground/5 group relative flex flex-col w-full border-2 border-primary-foreground overflow-clip backdrop-blur-sm"
         style={shimmerStyle}
-        className="bg-foreground/[3%] backdrop-blur-lg group ease-out transition-transform w-full p-8 flex items-center justify-center border-2 border-border font-mono uppercase h-auto text-left *:px-4 *:py-4 animate-shiny-text bg-no-repeat [background-size:var(--shiny-width)_100%] bg-gradient-to-r from-transparent via-foreground/ via-50% to-transparent"
       >
-        <div className="sr-only">Buk</div>
-        <img src="/logos/logo-buk.svg" className="scale-100 group-hover:scale-105 ease-out" />
-      </Link>
-
-      <div className="mt-16 -mb-4 h-0.5 w-full bg-muted brightness-[300%]" />
-
-      <span className="uppercase mr-auto font-mono px-4 py-2 text-3xl brightness-[300%] bg-muted text-black">
-        Sponsors
-      </span>
-
-      <div className="w-full flex gap-8">
-        <Link
-          to="https://www.buk.cl/"
-          style={shimmerStyle}
-          className="bg-foreground/[3%] backdrop-blur-lg group ease-out transition-transform w-full p-4 flex items-center justify-center border-2 border-neutral-800 font-mono uppercase h-auto text-left *:px-4 *:py-4 animate-shiny-text bg-no-repeat [background-size:var(--shiny-width)_100%] bg-gradient-to-r from-transparent via-foreground/ via-50% to-transparent"
-        >
-          <div className="sr-only">Buk</div>
-          <img src="/logos/logo-buk.svg" className="scale-100 group-hover:scale-105 ease-out" />
-        </Link>
+        <span className="uppercase mr-auto font-mono px-3 w-full text-center md:text-left py-1 text-base bg-yellow-300 text-black">
+          Main sponsor
+        </span>
 
         <Link
           to="https://www.buk.cl/"
-          style={shimmerStyle}
-          className="bg-foreground/[3%] backdrop-blur-lg group ease-out transition-transform w-full p-4 flex items-center justify-center border-2 border-neutral-800 font-mono uppercase h-auto text-left *:px-4 *:py-4 animate-shiny-text bg-no-repeat [background-size:var(--shiny-width)_100%] bg-gradient-to-r from-transparent via-foreground/ via-50% to-transparent"
+          className="w-full p-8 flex items-center justify-center"
         >
           <div className="sr-only">Buk</div>
-          <img src="/logos/logo-buk.svg" className="scale-100 group-hover:scale-105 ease-out" />
+          <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
         </Link>
+      </div>
+
+      <div className="bg-foreground/5 group relative flex flex-col w-full border-2 border-white/10 overflow-clip backdrop-blur-sm">
+        <span className="uppercase mr-auto font-mono px-3 w-full text-center md:text-left py-1 text-base bg-white/10 text-foreground/35">
+          Sponsors
+        </span>
+
+        <div className="w-full divide-x-2 divide-white/10 flex">
+          <Link
+            to="https://www.buk.cl/"
+            className="flex-1 p-8 flex items-center justify-center"
+          >
+            <div className="sr-only">Buk</div>
+            <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
+          </Link>
+
+          <Link
+            to="https://www.buk.cl/"
+            className="flex-1 p-8 flex items-center justify-center"
+          >
+            <div className="sr-only">Buk</div>
+            <img src="/logos/logo-buk.svg" className="scale-100 md:group-hover:scale-105 ease-out" />
+          </Link>
+        </div>
       </div>
     </section>
   );

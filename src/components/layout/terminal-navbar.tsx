@@ -110,11 +110,11 @@ export default function TerminalNavbar() {
 
   return (
     <header className={cn(
-      "sticky flex w-[calc(100%-32px)] shadow-2xl shadow-black items-center flex-col justify-center mx-auto md:max-w-sm overflow-clip uppercase z-50 bg-black/5 backdrop-blur-lg font-mono md:left-1/2 md:-translate-x-1/2 border border-border transition-all duration-300 ease-out",
+      "sticky flex w-[calc(100%-64px)] shadow-2xl shadow-black items-center flex-col justify-center mx-auto md:max-w-sm overflow-clip uppercase z-50 bg-black/5 backdrop-blur-md font-mono md:left-1/2 md:-translate-x-1/2 border border-border transition-all duration-300 ease-out",
       showNavbar ? "translate-y-0 inset-x-4 bottom-4 md:bottom-8" : "translate-y-full bottom-0"
       )}
     >
-      <div className="bg-white/5 w-full text-xs text-foreground/50 relative flex items-center gap-2 p-3">
+      <div className="bg-white/10 w-full text-xs text-foreground/50 relative flex items-center gap-2 p-3">
         <div className="flex gap-1">
           <div className="size-2 rounded-full bg-red-600" />
           <div className="size-2 rounded-full bg-yellow-600" />
