@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { TerminalOutput } from "@/components/ui/terminal-output";
 import Gallery from "@/components/home/gallery";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [bgOpacity, setBgOpacity] = useState(0);
@@ -46,8 +47,19 @@ const Index = () => {
           No te lo pierdas
         </h2>
 
-        <div className="flex bg-black mt-2">
-          <TerminalOutput output={`Jueves 20.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`} />
+        <div className="p-1 w-full max-w-64 space-y-4 items-center mt-6">
+          <Button className="w-full relative gap-4 z-10 pr-3" asChild>
+            <Link to="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer">
+              <div className="relative">
+                <div className="size-1 shrink-0 bg-primary-foreground shadow-[0_0_8px_2px_var(--tw-shadow-color)] shadow-primary-foreground" />
+                <div className="size-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shrink-0 bg-primary-foreground/50 animate-ping blur-sm" />
+              </div>
+              Asegura tu cupo
+            </Link>
+          </Button>
+          <div className="flex bg-black w-full *:w-full">
+            <TerminalOutput output={`Jueves 20.nov 08:30 a 22:00\n(Oficinas de Buk)[https://www.google.com/maps?sca_esv=3c78addd28f7a980&output=search&q=buk+oficinas&source=lnms&fbs=AIIjpHxMtlcgsqy-nC7XLLllhOr5bo8SRTrnCih88EF-Nzo8K1HwbfQfx36vp1zBe6bZjsU6jhL8zp_XUxREDT1-UWICCuBBIjFffj9e2fIBDe7rXDxJ3WRzg3cfA6YVsB33I7cUuChs-F8ykQAl3F0or0G2OkPSfPt-3NOOuAI3UP6EEWBgR0cq7f0d7nkk6m5HoyAbWvzcBLCJX34DsEK1vpJgMgU4pg&entry=mc&ved=1t:200715&ictx=111]. Santiago`} />
+          </div>
         </div>
       </div>
 

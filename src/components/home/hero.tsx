@@ -174,7 +174,7 @@ export const Hero = () => {
           Un día para nuestros fundadores, inversionistas y amigos
         </p>
 
-        <div className="p-1 w-full max-w-xs space-y-4 items-center">
+        <div className="p-1 w-full max-w-64 space-y-4 items-center">
           <Button className="w-full relative gap-4 z-10 pr-3" asChild>
             <Link to="https://luma.com/7arkbzzf" target="_blank" rel="noopener noreferrer">
               <div className="relative">
