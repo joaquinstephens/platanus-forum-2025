@@ -183,7 +183,7 @@ export default function Agenda() {
                               key={idx}
                               to={item.links?.[idx] || "#"}
                               target="_blank"
-                              className="bg-white/15 group relative flex border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
+                              className="bg-white/[12%] group relative flex border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
                             >
                               <div className="w-auto h-24 aspect-square flex-shrink-0 overflow-hidden">
                                 <img
@@ -207,7 +207,7 @@ export default function Agenda() {
               }
 
               return (
-                <tr key={index} className={cn("flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4", item.isBreak && "bg-white/15 backdrop-blur-sm")}>
+                <tr key={index} className={cn("flex flex-col md:table-row md:flex-none align-top font-mono uppercase border-b border-border h-auto text-left px-8 py-4 md:*:px-4 md:*:py-4", item.isBreak && "bg-white/[12%] backdrop-blur-sm")}>
                   <td className="text-foreground">
                     {item.time.start} - {item.time.end}
                   </td>
