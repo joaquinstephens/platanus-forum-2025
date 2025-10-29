@@ -82,26 +82,28 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
       const distanceFromEdge = row / numRows;
 
       if (distanceFromEdge < completePoint) {
-        return null;
+        return { color: null, opacity: 0 };
       }
 
       const remainingDistance = (distanceFromEdge - completePoint) / (fadePoint - completePoint);
       const hideChance = Math.pow(1 - Math.min(remainingDistance, 1), 2) * 100;
 
-      if (random * 100 < hideChance) {
-        return null;
-      }
+      const baseOpacity = 1 - (hideChance / 100);
+      const flickerOpacity = random * 100 < hideChance ? 0 : baseOpacity;
 
       const colorRand = seededRandom(random * 2000);
+      let color;
       if (colorScheme === 'grayscale') {
-        if (colorRand < 0.1) return '#A3A3A3';
-        if (colorRand < 0.4) return '#525252';
-        return '#171717';
+        if (colorRand < 0.1) color = '#A3A3A3';
+        else if (colorRand < 0.4) color = '#525252';
+        else color = '#171717';
       } else {
-        if (colorRand < 0.1) return '#9C6323';
-        if (colorRand < 0.4) return '#F9A341';
-        return '#FFEC40';
+        if (colorRand < 0.1) color = '#9C6323';
+        else if (colorRand < 0.4) color = '#F9A341';
+        else color = '#FFEC40';
       }
+
+      return { color, opacity: flickerOpacity };
     });
   }, [numRows, numCols, randomSeed, hiddenPercentage, completelyHiddenPercentage, colorScheme]);
 
@@ -122,11 +124,11 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
         viewBox={`0 0 ${containerWidth} ${containerHeight}`}
         preserveAspectRatio="none"
       >
-        {randomPixels.map((fillColor, index) => {
+        {randomPixels.map((pixel, index) => {
           const rowIndex = Math.floor(index / numCols);
           const colIndex = index % numCols;
 
-          if (!fillColor) return null;
+          if (!pixel || !pixel.color) return null;
 
           return (
             <rect
@@ -135,7 +137,11 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
               y={offsetY + pixelSize + (rowIndex * (pixelSize + gapSize))}
               width={pixelSize}
               height={pixelSize}
-              fill={fillColor}
+              fill={pixel.color}
+              opacity={pixel.opacity}
+              style={{
+                transition: 'opacity 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
             />
           );
         })}

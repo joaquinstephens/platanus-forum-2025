@@ -181,7 +181,7 @@ export default function Agenda() {
                           {item.title}
                           {item.description && <p className="max-w-lg text-balance text-muted-foreground/70 mt-0.5">{item.description}</p>}
                         </div>
-                        <div className="flex flex-col gap-3 pb-3">
+                        <div className="flex flex-col md:flex-row gap-3 pb-3">
                           {item.speakers?.map((speaker, idx) => (
                             <Link
                               key={idx}
