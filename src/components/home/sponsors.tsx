@@ -10,7 +10,7 @@ export default function Sponsors() {
 
   return (
     <section className="z-20 my-12 md:my-24 max-w-4xl w-full md:px-4 mx-auto flex flex-col justify-start items-start gap-14">
-      <span className="px-8 font-mono uppercase text-foreground">
+      <span className="text-sm px-8 font-mono uppercase text-foreground">
         {'< Sponsors />'}
       </span>
       <div className="[&_img]:select-none max-w-lg mx-auto grid place-items-center grid-cols-2 gap-24">
