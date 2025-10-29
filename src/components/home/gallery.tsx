@@ -10,13 +10,13 @@ const COMMUNITY_BREAKDOWN = [
 
 export default function Gallery() {
   return (
-    <section className="my-12 md:my-24 pb-32 w-full mx-auto flex flex-col justify-start items-start gap-10">
+    <section className="text-sm my-12 md:my-24 pb-32 w-full mx-auto flex flex-col justify-start items-start gap-10">
       <span className="max-w-4xl mx-auto w-full text-left px-8 md:px-12 font-mono uppercase text-foreground">
         {'< Un poco del año pasado />'}
       </span>
 
       <div className="max-w-4xl mx-auto w-full px-8 md:px-12 space-y-4">
-        <p className="w-full font-mono uppercase text-left max-w-sm -mt-4 mb-10 text-muted-foreground">
+        <p className="w-full font-mono uppercase text-left max-w-sm -mt-5 mb-8 text-muted-foreground">
           El año pasado fueron 150 personas de nuestra comunidad, repartidos entre:
         </p>
         <div className="w-full flex h-1">
