@@ -31,13 +31,13 @@ const AGENDA_ITEMS: AgendaItem[] = [
   },
   {
     time: { start: '10:00', end: '11:00' },
-    title: 'Fireside chat con Roman Teslyuk',
-    speakers: ["Roman Teslyuk"],
-    tagline: "Usa IA para encontrar los mejores yacimientos mineros.",
-    logo: "/logos/earth-ai.png",
-    logoHeight: "h-4",
-    link: "https://www.linkedin.com/in/roman-teslyuk-a344881a/",
-    profileImage: "/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.webp"
+    title: 'Fireside chat con Ignacio Beliers',
+    speakers: ["Ignacio Beliers"],
+    tagline: "Vehículos espaciales para transportar carga en órbita.",
+    logo: "/mentors/epic-aerospace.png",
+    logoHeight: "h-3",
+    link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
+    profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.webp"
   },
   {
     time: { start: '11:00', end: '12:00' },
@@ -82,13 +82,13 @@ const AGENDA_ITEMS: AgendaItem[] = [
   },
   {
     time: { start: '16:30', end: '17:30' },
-    title: 'Fireside chat con Ignacio Beliers',
-    speakers: ["Ignacio Beliers"],
-    tagline: "Vehículos espaciales para transportar carga en órbita.",
-    logo: "/mentors/epic-aerospace.png",
-    logoHeight: "h-3",
-    link: "https://www.linkedin.com/in/ignacio-belieres-montero-14b457b6/",
-    profileImage: "/lovable-uploads/4ca3c16b-eb9a-4fb0-a1a9-f6b1174d0aec.webp"
+    title: 'Fireside chat con Roman Teslyuk',
+    speakers: ["Roman Teslyuk"],
+    tagline: "Usa IA para encontrar los mejores yacimientos mineros.",
+    logo: "/logos/earth-ai.png",
+    logoHeight: "h-4",
+    link: "https://www.linkedin.com/in/roman-teslyuk-a344881a/",
+    profileImage: "/lovable-uploads/3add01c8-aff6-4ac5-b726-588ba0a5cd4a.webp"
   },
   {
     time: { start: '18:30', end: '22:00' },
