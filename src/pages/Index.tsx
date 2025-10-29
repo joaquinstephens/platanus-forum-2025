@@ -36,7 +36,7 @@ const Index = () => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const threshold = window.innerHeight * 0.7;
-      setBgOpacity(scrolled > threshold ? 1 : 0);
+      setBgOpacity(scrolled > threshold ? 0.6 : 0);
     };
 
     window.addEventListener("scroll", handleScroll);

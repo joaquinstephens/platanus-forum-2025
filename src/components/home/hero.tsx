@@ -9,7 +9,7 @@ import Component from "@/components/ui/faulty-terminal";
 
 const FADE_END_BLUR = 48;
 const FADE_DURATION_PERCENT = 0.5;
-const FADE_START_PERCENT = 0.1; 
+const FADE_START_PERCENT = 0.1;
 
 const linear = (t: number) => t;
 
@@ -52,10 +52,11 @@ export const Hero = () => {
       <div className="z-10 md:hidden absolute inset-x-0 w-screen top-0 bg-gradient-to-b from-black to-transparent h-24" />
 
       <img src="/mut.jpg" alt="Oficinas de Buk" className="hidden grayscale -z-10 w-full h-full inset-0 absolute object-cover opacity-60" />
+
       {/* <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,1) 100%)' }} />
       <div className="-z-10 w-full h-full inset-0 absolute" style={{ backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%)' }} /> */}
 
-      <div className="hidden absolute inset-0 w-full h-full min-h-svh justify-center items-center overflow-hidden">
+      {/* <div className="hidden absolute inset-0 w-full h-full min-h-svh justify-center items-center overflow-hidden">
         <Floating sensitivity={1} easingFactor={0.08}>
           <FloatingElement depth={1} className="top-[8%] left-[11%]">
             <img
@@ -85,7 +86,9 @@ export const Hero = () => {
           <FloatingElement depth={1} className="sr-only md:top-[73%] md:left-[15%]">
             <img src="/lovable-uploads/51c77275-536b-4367-9b70-da20cf4ca6b2.webp" alt="Speaker at Platanus Forum" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
-          {/* <FloatingElement depth={2} className="top-[80%] left-[50%]">
+
+
+          <FloatingElement depth={2} className="top-[80%] left-[50%]">
             <img src="/lovable-uploads/8b0c9c08-0dee-4aa0-89cd-69a8a2cc3391.webp" alt="Audience at the forum" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
           </FloatingElement>
           <FloatingElement depth={3} className="top-[50%] left-[40%]">
@@ -99,9 +102,9 @@ export const Hero = () => {
           </FloatingElement>
           <FloatingElement depth={3} className="top-[50%] left-[85%]">
             <img src="/lovable-uploads/791c36a4-7ab7-4ee1-a683-42d987a72efd.webp" alt="Attendees networking" className="w-[60px] h-[60px] object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer hover:scale-105" />
-          </FloatingElement> */}
+          </FloatingElement>
         </Floating>
-      </div>
+      </div> */}
 
       <motion.div
         ref={heroRef}
@@ -110,9 +113,17 @@ export const Hero = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.88, delay: 0.3 }}
       >
-        <Badge className="hidden gap-2.5">
+        {/* <Badge className="hidden gap-2.5">
           Forum 2025
-        </Badge>
+        </Badge> */}
+
+        <img
+          src="/platanus.svg"
+          alt="Platanus logo"
+          width={164}
+          height={40}
+          className="mx-auto bg-black h-9 z-20"
+        />
         <h1 className="-mb-7 md:-mb-5 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
           Platanus Forum '25
         </h1>

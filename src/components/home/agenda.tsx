@@ -25,13 +25,9 @@ interface AgendaItem {
 
 const AGENDA_ITEMS: AgendaItem[] = [
   {
-    time: { start: '08:30', end: '09:50' },
+    time: { start: '08:30', end: '10:00' },
     title: 'Desayuno + contexto del evento',
     isBreak: true
-  },
-  {
-    time: { start: '09:50', end: '10:00' },
-    title: 'Palabras de Maxxa',
   },
   {
     time: { start: '10:00', end: '11:00' },
@@ -49,7 +45,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
     description: 'Dos de nuestros mentores hacen una sesión de mentoría en vivo a dos de nuestras startups.',
     speakers: ["Jaime Arrieta", "Pedro Pineda"],
     profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.webp", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.webp"],
-    taglines: ["CEO Buk", "CEO Fintual"],
+    taglines: ["Mentor, CEO Buk", "Mentor, CEO Fintual"],
     logos: ["/logos/buk.png", "/logos/fintual.png"],
     logoHeights: ["h-5", "h-5"],
     links: ["https://cl.linkedin.com/in/jaime-arrieta-boetsch-ab214150", "https://cl.linkedin.com/in/pedro-pineda-fintual"]
@@ -152,9 +148,9 @@ export default function Agenda() {
                         to={item.link}
                         target="_blank"
                         key={item.speakers[0]}
-                        className="my-2 bg-white/[7%] group relative flex border border-neutral-800 overflow-clip backdrop-blur-lg"
+                        className="my-2 bg-primary-foreground/[7%] text-primary-foreground group relative flex border border-primary-foreground overflow-clip backdrop-blur-lg"
                       >
-                        <div className="h-20 md:h-24 w-20 md:w-24 flex-shrink-0 overflow-hidden">
+                        <div className="w-auto h-24 flex-shrink-0 overflow-hidden">
                           <img
                             src={item.profileImage}
                             alt={item.speakers[0]}
@@ -162,8 +158,8 @@ export default function Agenda() {
                           />
                         </div>
                         <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
-                          <span className="font-mono uppercase text-white text-sm">{item.speakers[0]}</span>
-                          <p className="text-sm font-light text-muted-foreground/70">{item.tagline}</p>
+                          <span className="font-mono uppercase text-sm">{item.speakers[0]}</span>
+                          <p className="text-sm font-light opacity-70">{item.tagline}</p>
                           <img src={item.logo} alt={item.speakers[0]} width={108} height={24} className={cn("hidden md:block w-fit object-left object-contain mt-4 ml-right", item.logoHeight || "h-4")} />
                         </div>
                       </Link>
@@ -185,22 +181,22 @@ export default function Agenda() {
                           {item.title}
                           {item.description && <p className="max-w-lg text-balance text-muted-foreground/70 mt-0.5">{item.description}</p>}
                         </div>
-                        <div className="flex flex-row gap-3 pb-3">
+                        <div className="flex flex-col gap-3 pb-3">
                           {item.speakers?.map((speaker, idx) => (
                             <Link
                               key={idx}
                               to={item.links?.[idx] || "#"}
                               target="_blank"
-                              className="bg-white/[7%] group relative flex flex-col md:flex-row border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
+                              className="bg-white/[7%] group relative flex border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
                             >
-                              <div className="w-full md:w-auto md:h-24 flex-shrink-0 overflow-hidden">
+                              <div className="w-auto h-24 flex-shrink-0 overflow-hidden">
                                 <img
                                   src={item.profileImages?.[idx]}
                                   alt={speaker}
                                   className="grayscale md:group-hover:grayscale-0 md:group-hover:scale-[105%] duration-200 w-full h-full object-cover"
                                 />
                               </div>
-                              <div className="text-left flex flex-col gap-0.5 items-start justify-start px-4 py-4 md:py-2 w-full h-full">
+                              <div className="text-left flex flex-col gap-0.5 items-start justify-center px-4 py-2 w-full h-full">
                                 <span className="font-mono uppercase text-white text-sm">{speaker}</span>
                                 <p className="text-sm font-light text-muted-foreground/70">{item.taglines?.[idx]}</p>
                                 <img src={item.logos?.[idx]} alt={speaker} width={108} height={20} className={cn("w-fit object-left object-contain mt-3 ml-right", item.logoHeights?.[idx] || "h-5")} />
