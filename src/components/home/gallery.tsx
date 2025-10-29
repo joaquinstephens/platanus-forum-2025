@@ -1,5 +1,12 @@
 import { GallerySlider } from '../ui/gallery-slider';
 import { NumberTicker } from '../ui/number-ticker';
+import { cn } from '@/lib/utils';
+
+const COMMUNITY_BREAKDOWN = [
+  { label: 'Fundadores', percentage: 52, bgColor: 'bg-primary-foreground', textColor: 'text-primary-foreground' },
+  { label: 'VCs', percentage: 28, bgColor: 'bg-blue-500', textColor: 'text-blue-500' },
+  { label: 'LPs', percentage: 20, bgColor: 'bg-orange-500', textColor: 'text-orange-500' },
+];
 
 export default function Gallery() {
   return (
@@ -8,40 +15,26 @@ export default function Gallery() {
         {'< Un poco del año pasado />'}
       </span>
 
-      <div className="max-w-4xl mx-auto w-full px-12 space-y-4">
+      <div className="max-w-4xl mx-auto w-full px-8 md:px-12 space-y-4">
         <p className="w-full font-mono uppercase text-left max-w-sm -mt-4 mb-10 text-muted-foreground">
           El año pasado fueron 150 personas de nuestra comunidad, repartidos entre:
         </p>
         <div className="w-full flex h-1">
-          <div className="bg-primary-foreground" style={{ width: '52%' }}></div>
-          <div className="bg-orange-500" style={{ width: '20%' }}></div>
-          <div className="bg-blue-500" style={{ width: '28%' }}></div>
+          {COMMUNITY_BREAKDOWN.map((item) => (
+            <div key={item.label} className={item.bgColor} style={{ width: `${item.percentage}%` }} />
+          ))}
         </div>
 
         <ol className="w-full flex">
-          <div className="text-left font-mono font-normal space-y-0.5" style={{ width: '52%' }}>
-            <p className='text-muted-foreground font-mono uppercase text-sm'>Fundadores</p>
-            <p className="text-6xl text-primary-foreground *:!text-primary-foreground">
-              <NumberTicker value={52} />
-              <span>%</span>
-            </p>
-          </div>
-
-          <div className="text-left font-mono font-normal space-y-0.5" style={{ width: '20%' }}>
-            <p className='text-muted-foreground font-mono uppercase text-sm'>LPs</p>
-            <p className="text-6xl text-orange-500 *:!text-orange-500">
-              <NumberTicker value={20} />
-              <span>%</span>
-            </p>
-          </div>
-
-          <div className="text-left font-mono font-normal space-y-0.5" style={{ width: '28%' }}>
-            <p className='text-muted-foreground font-mono uppercase text-sm'>VCs</p>
-            <p className="text-6xl text-blue-500 *:!text-blue-500">
-              <NumberTicker value={28} />
-              <span>%</span>
-            </p>
-          </div>
+          {COMMUNITY_BREAKDOWN.map((item) => (
+            <div key={item.label} className="text-left font-mono font-normal space-y-0.5" style={{ width: `${item.percentage}%` }}>
+              <p className='text-muted-foreground font-mono uppercase text-sm'>{item.label}</p>
+              <p className={cn('text-2xl md:text-5xl', item.textColor, `*:!${item.textColor}`)}>
+                <NumberTicker value={item.percentage} />
+                <span>%</span>
+              </p>
+            </div>
+          ))}
         </ol>
       </div>
 

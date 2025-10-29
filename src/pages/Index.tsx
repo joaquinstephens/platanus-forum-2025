@@ -1,7 +1,6 @@
 import { Hero } from "@/components/home/hero";
 import Intro from "@/components/home/intro";
 import Agenda from "@/components/home/agenda";
-import Sponsors from "@/components/home/sponsors";
 import RotatingBanana from "@/components/RotatingBanana";
 import PixelGridBottom from "@/components/home/pixel-grid-bottom";
 import { Link } from "react-router-dom";
@@ -9,6 +8,7 @@ import { TerminalOutput } from "@/components/ui/terminal-output";
 import Gallery from "@/components/home/gallery";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import Sponsors from "@/components/home/sponsors";
 
 const LumaScript = () => {
   useEffect(() => {
