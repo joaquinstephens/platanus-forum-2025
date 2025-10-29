@@ -42,13 +42,13 @@ const AGENDA_ITEMS: AgendaItem[] = [
   {
     time: { start: '11:00', end: '12:00' },
     title: 'Coliseo en vivo',
-    description: 'Dos de nuestros mentores hacen una sesión de mentoría en vivo a dos de nuestras startups.',
-    speakers: ["Jaime Arrieta", "Pedro Pineda"],
-    profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.webp", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.webp"],
-    taglines: ["Mentor, CEO Buk", "Mentor, CEO Fintual"],
-    logos: ["/logos/buk.png", "/logos/fintual.png"],
-    logoHeights: ["h-5", "h-5"],
-    links: ["https://cl.linkedin.com/in/jaime-arrieta-boetsch-ab214150", "https://cl.linkedin.com/in/pedro-pineda-fintual"]
+    description: 'Tres de nuestros mentores hacen una sesión de mentoría en vivo a dos de nuestras startups.',
+    speakers: ["Jaime Arrieta", "Pedro Pineda", "Juan Pablo Cuevas"],
+    profileImages: ["/lovable-uploads/f16b08ff-2ca9-438d-a1b5-68c3a3b166d9.webp", "/lovable-uploads/0a9f992e-3a71-45e6-aebe-612eb9c3aeee.webp", "/lovable-uploads/c2bcd5e5-a377-481c-a355-fb55e6ee9dbc.webp"],
+    taglines: ["Mentor, Buk", "Mentor, Fintual", "Mentor, Cornershop"],
+    logos: ["/logos/buk.png", "/logos/fintual.png", "/logos/corner.png"],
+    logoHeights: ["h-5", "h-5", "h-5"],
+    links: ["https://cl.linkedin.com/in/jaime-arrieta-boetsch-ab214150", "https://cl.linkedin.com/in/pedro-pineda-fintual", "https://cl.linkedin.com/in/jpcuevas"]
   },
   {
     time: { start: '12:00', end: '13:00' },
@@ -177,7 +177,7 @@ export default function Agenda() {
                           {item.title}
                           {item.description && <p className="max-w-lg text-balance text-muted-foreground/70 mt-0.5">{item.description}</p>}
                         </div>
-                        <div className="flex flex-col md:flex-row gap-3 pb-3">
+                        <div className="flex flex-col md:grid md:grid-cols-2 gap-3 pb-3">
                           {item.speakers?.map((speaker, idx) => (
                             <Link
                               key={idx}
