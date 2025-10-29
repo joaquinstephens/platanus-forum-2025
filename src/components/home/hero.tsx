@@ -125,7 +125,8 @@ export const Hero = () => {
           className="mx-auto bg-black size-9 z-20"
         />
         <h1 className="-mb-7 md:-mb-5 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
-          Platanus Forum '25
+          Platanus Forum
+          <span className="text-primary-foreground ml-1.5"><span className="-mr-0.5">'</span>25</span>
         </h1>
 
         <p className="font-mono max-w-lg leading-5 md:leading-6 md:text-base w-full px-8 uppercase text-sm text-muted-foreground">
