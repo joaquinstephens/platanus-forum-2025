@@ -10,7 +10,7 @@ export default function Intro() {
           viewport={{ margin: "-128px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          A lo largo del tiempo han existido lugares donde se concentra la genialidad. Atenas, Florencia, Silicon Valley. Momentos en que la gente correcta se junta y las ideas fluyen.
+          La genialidad se ha concentrado en lugares a lo largo de la historia. Atenas, Florencia, Silicon Valley. La gente correcta se junta y las ideas fluyen.
         </motion.p>
 
         <motion.p
@@ -19,7 +19,7 @@ export default function Intro() {
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          En Platanus creemos que ese tipo de cosas pueden pasar acá también. Que no se trata de un lugar, sino de una comunidad que comparte curiosidad, talento y ganas de construir.
+          En Platanus Forum es ese punto de encuentro.
         </motion.p>
 
         <motion.p
@@ -28,7 +28,7 @@ export default function Intro() {
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Platanus Forum es ese punto de encuentro. Donde las conversaciones valen más que las charlas, y las ideas se cruzan sin permiso.
+          A partir de más de 250 fundadores, cientos de inversionistas y nuestra amplia red de contactos, reunimos personas que comparten una característica que los une: la curiosidad por conocer gente haciendo cosas fuera de lo común y entender mejor lo que está pasando en el mundo.
         </motion.p>
       </div>
     </section>

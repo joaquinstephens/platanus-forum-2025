@@ -150,7 +150,7 @@ export default function Agenda() {
                         key={item.speakers[0]}
                         className="my-2 bg-primary-foreground/[7%] text-primary-foreground group relative flex border border-primary-foreground overflow-clip backdrop-blur-lg"
                       >
-                        <div className="w-auto h-24 flex-shrink-0 overflow-hidden">
+                        <div className="w-auto h-24 aspect-square flex-shrink-0 overflow-hidden">
                           <img
                             src={item.profileImage}
                             alt={item.speakers[0]}
@@ -189,7 +189,7 @@ export default function Agenda() {
                               target="_blank"
                               className="bg-white/[7%] group relative flex border border-neutral-800 backdrop-blur-lg overflow-hidden flex-1"
                             >
-                              <div className="w-auto h-24 flex-shrink-0 overflow-hidden">
+                              <div className="w-auto h-24 aspect-square flex-shrink-0 overflow-hidden">
                                 <img
                                   src={item.profileImages?.[idx]}
                                   alt={speaker}

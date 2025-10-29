@@ -118,11 +118,11 @@ export const Hero = () => {
         </Badge> */}
 
         <img
-          src="/platanus.svg"
-          alt="Platanus logo"
-          width={164}
+          src="https://storage.googleapis.com/gpt-engineer-file-uploads/45O3ELuB7IRTDeJAk2HCVAIx2QL2/uploads/1757570858320-bananas-yellow.png"
+          alt="Platanus icon"
+          width={40}
           height={40}
-          className="mx-auto bg-black h-9 z-20"
+          className="mx-auto bg-black size-9 z-20"
         />
         <h1 className="-mb-7 md:-mb-5 font-mono text-3xl md:text-6xl max-w-5xl px-4 text-balance leading-tight uppercase relative z-10">
           Platanus Forum '25
