@@ -92,7 +92,7 @@ const AGENDA_ITEMS: AgendaItem[] = [
   },
   {
     time: { start: '18:30', end: '22:00' },
-    title: 'Cocktail de Cierre',
+    title: 'Evento de cierre',
     isBreak: true
   },
 ]
