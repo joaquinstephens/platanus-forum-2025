@@ -110,7 +110,7 @@ const Index = () => {
       </div>
 
       <div className="relative -z-10 -mt-[576px]">
-        <PixelGridBottom gapMultiplier={4} radial />
+        <PixelGridBottom gapMultiplier={4} />
 
         <div className="absolute -z-50 bottom-0 w-screen left-1/2 -translate-x-1/2 bg-gradient-to-t from-black from-25% to-transparent h-[150svh]" />
       </div>

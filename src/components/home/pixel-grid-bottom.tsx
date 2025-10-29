@@ -85,15 +85,17 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
       let y: number = 0;
 
       if (radial) {
-        const angle = (index / totalPixels) * Math.PI;
-        const radiusRatio = index / totalPixels;
-        distanceFromEdge = radiusRatio;
+        const row = Math.floor(index / numCols);
+        const col = index % numCols;
+        distanceFromEdge = row / numRows;
 
-        const maxRadius = Math.min(containerWidth, containerHeight) * 0.35;
-        const radius = radiusRatio * maxRadius;
+        const pixelX = offsetX + pixelSize + (col * (pixelSize + gapSize));
+        const pixelY = offsetY + pixelSize + (row * (pixelSize + gapSize));
 
-        x = centerX + Math.cos(angle - Math.PI / 2) * radius;
-        y = containerHeight - pixelSize + Math.sin(angle - Math.PI / 2) * radius;
+        const distFromBottom = 1 - (pixelY / containerHeight);
+        x = pixelX;
+        y = pixelY;
+        distanceFromEdge = distFromBottom;
       } else {
         const row = Math.floor(index / numCols);
         distanceFromEdge = row / numRows;
