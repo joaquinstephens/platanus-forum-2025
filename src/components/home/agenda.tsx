@@ -109,7 +109,7 @@ export default function Agenda() {
   }
 
   return (
-    <section className="text-sm w-full p-8 mx-auto max-w-screen-lg space-y-8 py-32">
+    <section className="text-sm w-full p-8 mx-auto max-w-4xl space-y-8 py-32">
       <div className="md:px-4 flex font-mono uppercase w-full">
         <span className="font-mono uppercase text-foreground">
           {'< Agenda />'}

@@ -9,8 +9,8 @@ export default function Sponsors() {
   } as CSSProperties;
 
   return (
-    <section className="z-20 my-12 md:my-24 max-w-screen-lg w-full px-8 mx-auto flex flex-col justify-start items-start gap-14">
-      <span className="font-mono uppercase text-foreground">
+    <section className="z-20 my-12 md:my-24 max-w-4xl w-full md:px-8 mx-auto flex flex-col justify-start items-start gap-14">
+      <span className="px-8 font-mono uppercase text-foreground">
         {'< Sponsors />'}
       </span>
       <div className="[&_img]:select-none max-w-lg mx-auto grid place-items-center grid-cols-2 gap-24">

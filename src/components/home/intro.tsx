@@ -28,7 +28,7 @@ export default function Intro() {
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          A partir de más de 250 fundadores, cientos de inversionistas y nuestra amplia red de contactos, reunimos personas que comparten una característica que los une: la curiosidad por conocer gente haciendo cosas fuera de lo común y entender mejor lo que está pasando en el mundo.
+          Reunimos a nuestros fundadores, inversionistas y cercanos que comparten una característica común: la curiosidad por conocer gente haciendo cosas interesantes y entender mejor lo qué está pasando en el mundo.
         </motion.p>
       </div>
     </section>
