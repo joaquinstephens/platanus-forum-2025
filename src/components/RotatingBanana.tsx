@@ -598,7 +598,7 @@ export default function RotatingBanana({
     >
       <canvas
         ref={canvasRef}
-        className="scale-[150%] md:scale-125 absolute h-full w-full"
+        className="scale-[150%] md:scale-125 absolute h-full w-full mt-12"
         style={{
           pointerEvents: isMobile || disableMouseInteractions ? 'none' : 'auto',
           touchAction: isMobile || disableMouseInteractions ? 'none' : 'auto',
