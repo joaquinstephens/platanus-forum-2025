@@ -19,7 +19,7 @@ export default function Intro() {
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          En Platanus Forum es ese punto de encuentro.
+          Platanus Forum es ese punto de encuentro.
         </motion.p>
 
         <motion.p

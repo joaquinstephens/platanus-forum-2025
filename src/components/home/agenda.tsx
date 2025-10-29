@@ -61,13 +61,9 @@ const AGENDA_ITEMS: AgendaItem[] = [
     profileImage: "/lovable-uploads/roger.jpeg"
   },
   {
-    time: { start: '13:00', end: '14:00' },
+    time: { start: '13:00', end: '14:30' },
     title: 'Almuerzo: en las terrazas del MUT por cuenta de Platanus.',
     isBreak: true
-  },
-  {
-    time: { start: '14:00', end: '14:30' },
-    title: 'Eleven Labs',
   },
   {
     time: { start: '14:30', end: '15:30' },

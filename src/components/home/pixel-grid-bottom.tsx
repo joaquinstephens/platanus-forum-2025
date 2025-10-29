@@ -23,7 +23,7 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
   const [colorScheme, setColorScheme] = React.useState<'color' | 'grayscale'>(initialColorScheme);
   const [hiddenPercentage, setHiddenPercentage] = React.useState(initialHiddenPercentage);
   const [completelyHiddenPercentage, setCompletelyHiddenPercentage] = React.useState(initialCompletelyHiddenPercentage);
-  const [animationSpeed, setAnimationSpeed] = React.useState(120);
+  const [animationSpeed, setAnimationSpeed] = React.useState(105);
   const [seedIntensity, setSeedIntensity] = React.useState(0.1);
   const animationIntervalRef = React.useRef<number>();
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -140,7 +140,7 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
               fill={pixel.color}
               opacity={pixel.opacity}
               style={{
-                transition: 'opacity 300ms cubic-bezier(0.4, 0, 0.2, 1)',
+                transition: 'opacity 300ms cubic-bezier(0.2, 0, 0.4, 1)',
               }}
             />
           );
