@@ -30,7 +30,7 @@ export default function Gallery() {
             <div key={item.label} className="text-left font-mono font-normal space-y-0.5" style={{ width: `${item.percentage}%` }}>
               <p className='text-muted-foreground font-mono uppercase text-sm'>{item.label}</p>
               <p className={cn('text-2xl md:text-5xl', item.textColor, `*:!${item.textColor}`)}>
-                <NumberTicker value={item.percentage} />
+                <NumberTicker value={item.percentage} className={item.textColor} />
                 <span>%</span>
               </p>
             </div>

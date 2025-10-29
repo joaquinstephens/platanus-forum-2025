@@ -7,6 +7,7 @@ interface PixelGridBottomProps {
   colorScheme?: 'color' | 'grayscale';
   hiddenPercentage?: number;
   completelyHiddenPercentage?: number;
+  radial?: boolean;
 }
 
 const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
@@ -15,6 +16,7 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
   colorScheme: initialColorScheme = 'color',
   hiddenPercentage: initialHiddenPercentage = 92,
   completelyHiddenPercentage: initialCompletelyHiddenPercentage = 68,
+  radial = false,
 }) => {
   const [randomSeed, setRandomSeed] = React.useState<number>(0);
   const [containerWidth, setContainerWidth] = React.useState<number>(0);
@@ -71,18 +73,37 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
       return x - Math.floor(x);
     };
 
-    return Array.from({ length: numRows * numCols }, (_, index) => {
-      const row = Math.floor(index / numCols);
-      const col = index % numCols;
+    const totalPixels = numRows * numCols;
+    const centerX = containerWidth / 2;
+    const centerY = containerHeight / 2;
+
+    return Array.from({ length: totalPixels }, (_, index) => {
       const random = seededRandom(index + randomSeed);
+
+      let distanceFromEdge: number;
+      let x: number = 0;
+      let y: number = 0;
+
+      if (radial) {
+        const angle = (index / totalPixels) * Math.PI;
+        const radiusRatio = index / totalPixels;
+        distanceFromEdge = radiusRatio;
+
+        const maxRadius = Math.min(containerWidth, containerHeight) * 0.35;
+        const radius = radiusRatio * maxRadius;
+
+        x = centerX + Math.cos(angle - Math.PI / 2) * radius;
+        y = containerHeight - pixelSize + Math.sin(angle - Math.PI / 2) * radius;
+      } else {
+        const row = Math.floor(index / numCols);
+        distanceFromEdge = row / numRows;
+      }
 
       const fadePoint = hiddenPercentage / 100;
       const completePoint = completelyHiddenPercentage / 100;
 
-      const distanceFromEdge = row / numRows;
-
       if (distanceFromEdge < completePoint) {
-        return { color: null, opacity: 0 };
+        return { color: null, opacity: 0, x, y };
       }
 
       const remainingDistance = (distanceFromEdge - completePoint) / (fadePoint - completePoint);
@@ -103,9 +124,9 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
         else color = '#FFEC40';
       }
 
-      return { color, opacity: flickerOpacity };
+      return { color, opacity: flickerOpacity, x, y };
     });
-  }, [numRows, numCols, randomSeed, hiddenPercentage, completelyHiddenPercentage, colorScheme]);
+  }, [numRows, numCols, randomSeed, hiddenPercentage, completelyHiddenPercentage, colorScheme, radial, containerWidth, containerHeight]);
 
   if (containerWidth === 0) {
     return <div ref={containerRef} className="w-full" style={{ height: containerHeight }} />;
@@ -130,11 +151,20 @@ const PixelGridBottom: React.FC<PixelGridBottomProps> = ({
 
           if (!pixel || !pixel.color) return null;
 
+          let rectX, rectY;
+          if (radial) {
+            rectX = pixel.x - pixelSize / 2;
+            rectY = pixel.y - pixelSize / 2;
+          } else {
+            rectX = offsetX + pixelSize + (colIndex * (pixelSize + gapSize));
+            rectY = offsetY + pixelSize + (rowIndex * (pixelSize + gapSize));
+          }
+
           return (
             <rect
               key={`${rowIndex}-${colIndex}`}
-              x={offsetX + pixelSize + (colIndex * (pixelSize + gapSize))}
-              y={offsetY + pixelSize + (rowIndex * (pixelSize + gapSize))}
+              x={rectX}
+              y={rectY}
               width={pixelSize}
               height={pixelSize}
               fill={pixel.color}
