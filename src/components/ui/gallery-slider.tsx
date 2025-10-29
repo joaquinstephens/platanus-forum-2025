@@ -1,13 +1,18 @@
 import { GALLERY_IMAGES } from "@/constants/gallery-images";
 
 interface GallerySliderProps {
-  direction?: "left" | "right";
+  direction?: "left" | "right" | "up" | "down";
   speed?: number;
 }
 
-export function GallerySlider({ direction = "left", speed = 30 }: GallerySliderProps) {
+export function GallerySlider({ direction = "left", speed = 25 }: GallerySliderProps) {
   const duplicatedImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES];
-  const animationName = direction === "left" ? "scroll-left" : "scroll-right";
+  const isVertical = direction === "up" || direction === "down";
+  const animationName =
+    direction === "left" ? "scroll-left" :
+    direction === "right" ? "scroll-right" :
+    direction === "up" ? "scroll-up" :
+    "scroll-down";
 
   return (
     <>
@@ -30,20 +35,38 @@ export function GallerySlider({ direction = "left", speed = 30 }: GallerySliderP
           }
         }
 
+        @keyframes scroll-up {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        @keyframes scroll-down {
+          0% {
+            transform: translateY(-50%);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+
         .gallery-scroll {
           animation: ${animationName} ${speed}s linear infinite;
         }
 
         .gallery-container {
           mask: linear-gradient(
-            90deg,
+            ${isVertical ? '180deg' : '90deg'},
             transparent 0%,
             black 10%,
             black 90%,
             transparent 100%
           );
           -webkit-mask: linear-gradient(
-            90deg,
+            ${isVertical ? '180deg' : '90deg'},
             transparent 0%,
             black 10%,
             black 90%,
@@ -56,12 +79,12 @@ export function GallerySlider({ direction = "left", speed = 30 }: GallerySliderP
         }
       `}</style>
 
-      <div className="gallery-container w-full overflow-hidden">
-        <div className="gallery-scroll flex gap-2 w-max">
+      <div className={`gallery-container ${isVertical ? 'h-full' : 'w-full'} overflow-hidden`}>
+        <div className={`mx-auto items-center gallery-scroll flex gap-2 ${isVertical ? 'flex-col h-max md:h-[48vh]' : 'w-max'}`}>
           {duplicatedImages.map((image, index) => (
             <div
               key={index}
-              className="gallery-ite grayscale hover:grayscale-0 flex-shrink-0 w-32 h-32 md:w-64 md:h-64 lg:w-80 lg:h-80 overflow-hidden shadow-2xl"
+              className={`gallery-ite grayscale hover:grayscale-0 flex-shrink-0 ${isVertical ? 'w-32 h-32 md:w-48 md:h-48 lg:w-64 lg:h-64' : 'w-32 h-32 md:w-64 md:h-64 lg:w-80 lg:h-80'} overflow-hidden shadow-2xl`}
             >
               <img
                 src={image.src}
