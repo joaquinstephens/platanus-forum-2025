@@ -3,9 +3,9 @@ import { NumberTicker } from '../ui/number-ticker';
 import { cn } from '@/lib/utils';
 
 const COMMUNITY_BREAKDOWN = [
-  { label: 'Fundadores', percentage: 52, bgColor: 'bg-primary-foreground', textColor: 'text-primary-foreground' },
+  { label: 'FUNDADORES', percentage: 52, bgColor: 'bg-primary-foreground', textColor: 'text-primary-foreground' },
   { label: 'VCs', percentage: 28, bgColor: 'bg-blue-500', textColor: 'text-blue-500' },
-  { label: 'LPs', percentage: 20, bgColor: 'bg-orange-500', textColor: 'text-orange-500' },
+  { label: 'LPs', percentage: 20, bgColor: 'bg-neutral-500', textColor: 'text-neutral-500' },
 ];
 
 export default function Gallery() {
@@ -27,8 +27,8 @@ export default function Gallery() {
 
         <ol className="w-full flex">
           {COMMUNITY_BREAKDOWN.map((item) => (
-            <div key={item.label} className="text-left font-mono font-normal space-y-0.5" style={{ width: `${item.percentage}%` }}>
-              <p className='text-muted-foreground font-mono uppercase text-sm'>{item.label}</p>
+            <div key={item.label} className="text-left font-mono font-normal md:space-y-0.5" style={{ width: `${item.percentage}%` }}>
+              <p className='text-muted-foreground font-mono text-sm !normal-case'>{item.label}</p>
               <p className={cn('text-2xl md:text-5xl', item.textColor, `*:!${item.textColor}`)}>
                 <NumberTicker value={item.percentage} className={item.textColor} />
                 <span>%</span>

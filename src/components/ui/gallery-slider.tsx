@@ -5,7 +5,7 @@ interface GallerySliderProps {
   speed?: number;
 }
 
-export function GallerySlider({ direction = "left", speed = 25 }: GallerySliderProps) {
+export function GallerySlider({ direction = "left", speed = 35 }: GallerySliderProps) {
   const duplicatedImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES];
   const isVertical = direction === "up" || direction === "down";
   const animationName =
